@@ -1,0 +1,157 @@
+---
+lab:
+  title: Analyser des vidéos avec Video Analyzer
+  module: Module 8 - Getting Started with Computer Vision
+ms.openlocfilehash: cd67c472b5ee15efce232483afc8aeeac552b50c
+ms.sourcegitcommit: d6da3bcb25d1cff0edacd759e75b7608a4694f03
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 11/16/2021
+ms.locfileid: "145195595"
+---
+# <a name="analyze-video-with-video-analyzer"></a>Analyser des vidéos avec Video Analyzer
+
+Une grande proportion des données créées et consommées aujourd’hui est au format vidéo. **Video Analyzer for Media** est un service basé sur l’IA que vous pouvez utiliser pour indexer des vidéos et en extraire des insights.
+
+## <a name="clone-the-repository-for-this-course"></a>Cloner le référentiel pour ce cours
+
+Si vous avez déjà cloné le référentiel de code **AI-102-AIEngineer** dans l’environnement dans lequel vous travaillez sur ce laboratoire, ouvrez-le dans Visual Studio Code ; sinon, procédez comme suit pour le cloner maintenant.
+
+1. Démarrez Visual Studio Code.
+2. Ouvrez la palette (Maj+CTRL+P) et exécutez une commande **Git : Cloner** pour cloner le référentiel `https://github.com/MicrosoftLearning/AI-102-AIEngineer` vers un dossier local (peu importe quel dossier).
+3. Une fois le référentiel cloné, ouvrez le dossier dans Visual Studio Code.
+4. Attendez que des fichiers supplémentaires soient installés pour prendre en charge les projets de code C# dans le référentiel.
+
+    > **Remarque** : Si vous êtes invité à ajouter des ressources requises pour générer et déboguer, sélectionnez **Not Now** (Pas maintenant).
+
+## <a name="upload-a-video-to-video-analyzer"></a>Charger une vidéo sur Video Analyzer
+
+Tout d’abord, vous devez vous connecter au portail Video Analyzer et charger une vidéo.
+
+> **Conseil** : Si la page Video Analyzer est lente à charger dans l’environnement de laboratoire hébergé, utilisez votre navigateur installé localement. Vous pourrez revenir à la machine virtuelle hébergée pour les tâches ultérieures.
+
+1. Dans votre navigateur, ouvrez le portail Video Analyzer à l’adresse `https://www.videoindexer.ai`.
+2. Si vous disposez d’un compte Video Analyzer existant, connectez-vous. Sinon, créez un compte gratuit et connectez-vous à l’aide de votre compte Microsoft (ou tout autre type de compte valide). Si vous ne parvenez pas à vous connecter, essayez d’ouvrir une session de navigation privée.
+3. Dans Video Analyzer, sélectionnez l’option **Charger**. Sélectionnez ensuite l’option permettant d’**entrer une URL de fichier** et saisissez `https://aka.ms/responsible-ai-video`. Remplacez le nom par défaut par **IA responsable**, passez en revue les paramètres par défaut, cochez la case pour vérifier la conformité avec les politiques de Microsoft concernant la reconnaissance faciale, puis chargez le fichier.
+4. Une fois le fichier chargé, patientez quelques minutes pendant que Video Analyzer l’indexe automatiquement.
+
+> **Remarque** : Dans cet exercice, nous utilisons cette vidéo pour explorer les fonctionnalités de Video Analyzer ; mais vous devriez prendre le temps de la regarder entièrement lorsque vous aurez terminé l’exercice, car elle contient des informations et des conseils utiles relatifs au développement d’applications compatibles avec l’IA de manière responsable. 
+
+## <a name="review-video-insights"></a>Passer en revue les insights vidéo
+
+Le processus d’indexation extrait des insights de la vidéo, que vous pouvez afficher dans le portail.
+
+1. Dans le portail Video Analyzer, une fois la vidéo indexée, sélectionnez-la pour l’afficher. Vous verrez le lecteur vidéo ainsi qu’un volet qui affiche les insights extraits de la vidéo.
+
+![Video Analyzer avec un lecteur vidéo et un volet Insights](./images/video-indexer-insights.png)
+
+2. Durant la lecture de la vidéo, sélectionnez l’onglet **Chronologie** pour afficher une transcription audio de la vidéo.
+
+![Video Analyzer avec un lecteur vidéo et un volet Chronologie affichant la transcription de la vidéo.](./images/video-indexer-transcript.png)
+
+3. En haut à droite du portail, sélectionnez le symbole **Affichage** (qui ressemble à &#128455;), puis, dans la liste des insights, en plus de **Transcription**, sélectionnez **OCR** et **Haut-parleurs**.
+
+![Menu affichage de Video Analyzer avec Transcription, OCR et Haut-parleurs sélectionnés](./images/video-indexer-view-menu.png)
+
+4. Notez que le volet **Chronologie** comprend désormais :
+    - Une transcription de la narration audio.
+    - Le texte visible dans la vidéo.
+    - Des indications des intervenants qui apparaissent dans la vidéo. Certaines personnes connues sont automatiquement reconnues par leur nom, d’autres sont indiquées par un numéro (par exemple *Speaker #1*).
+5. Revenez au volet **Insights** et affichez les insights. Notamment :
+    - Les personnes individuelles qui apparaissent dans la vidéo.
+    - Les sujets abordés dans la vidéo.
+    - Les étiquettes des objets qui apparaissent dans la vidéo.
+    - Les entités nommées, telles que les personnes et les marques qui apparaissent dans la vidéo.
+    - Les scènes clés.
+6. Avec le volet **Insights** visible, sélectionnez à nouveau le symbole **Affichage**, puis, dans la liste des insights, ajoutez **Mots clés** et **Sentiments** au volet.
+
+    Les insights trouvés peuvent vous aider à déterminer les principaux thèmes de la vidéo. Par exemple, les **sujets** de cette vidéo montrent clairement qu’elle porte sur la technologie, la responsabilité sociale et l’éthique.
+
+## <a name="search-for-insights"></a>Rechercher des insights
+
+Vous pouvez utiliser Video Analyzer pour rechercher des insights dans la vidéo.
+
+1. Dans le volet **Insights**, dans la zone **Recherche**, saisissez *Abeille*. Vous devrez peut-être défiler vers le bas dans le volet Insights pour afficher les résultats de tous les types d’insights.
+2. Notez qu’une *étiquette* correspondante est trouvée, avec son emplacement dans la vidéo indiquée en dessous.
+3. Sélectionnez le début de la section où la présence d’une abeille est indiquée et affichez la vidéo à ce moment-là (vous devrez peut-être suspendre la vidéo et sélectionner soigneusement ; l’abeille apparaît seulement brièvement !)
+4. Désactivez la zone **Recherche** pour afficher tous les insights de la vidéo.
+
+![Résultats de la recherche Video Analyzer pour « abeille »](./images/video-indexer-search.png)
+
+## <a name="edit-insights"></a>Modifier des insights
+
+Vous pouvez utiliser Video Analyzer pour modifier les insights qui ont été trouvés, en ajoutant des informations personnalisées pour mieux comprendre la vidéo.
+
+1. Remettez la vidéo au début et affichez les **personnes** répertoriées en haut du volet **Insights**. Notez que certaines personnes ont été reconnues, notamment **Eric Horwitz**, ingénieur informatique et expert technique chez Microsoft.
+
+![Insights Video Analyzer pour une personne connue](./images/video-indexer-known-person.png)
+
+2. Sélectionnez la photo d’Eric Horwitz et affichez les informations en dessous. Développez la section **Afficher la biographie** pour afficher des informations sur cette personne.
+3. Notez que les moments de la vidéo où cette personne apparaît sont indiqués. Vous pouvez les utiliser pour afficher ces sections de la vidéo.
+4. Dans le lecteur vidéo, recherchez la personne parlant à environ 0:34 :
+
+![Insights Video Analyzer pour une personne inconnue](./images/video-indexer-unknown-person.png)
+
+5. Notez que cette personne n’est pas reconnue et qu’un nom générique lui a été attribué, tel que **Unknown #1**. Toutefois, la vidéo inclut une légende portant le nom de cette personne, afin que nous puissions enrichir les insights en modifiant les détails concernant cette personne.
+6. En haut à droite du portail, sélectionnez l’icône **Modifier** (&#x1F589;). Remplacez ensuite le nom de la personne inconnue par **Natasha Crampton**.
+
+![Modification d’une personne dans Video Analyzer](./images/video-indexer-edit-name.png)
+
+7. Une fois que vous avez modifié le nom, recherchez *Natasha* dans le volet **Insights**. Les résultats doivent inclure une personne et indiquer les sections de la vidéo dans lesquelles elle apparaît.
+8. En haut à gauche du portail, développez le menu (&#8801;) et sélectionnez la page **Personnalisations de modèle**. Ensuite, sous l’onglet **Personnes**, observez que le modèle de personnes **par défaut** comporte une personne. Video Analyzer a ajouté la personne que vous avez nommée à un modèle de personnes, afin qu’elle soit reconnue dans toutes les vidéos futures que vous indexez dans votre compte.
+
+![Modèle de personnes par défaut dans Video Analyzer](./images/video-indexer-custom-model.png)
+
+Vous pouvez ajouter des images de personnes au modèle de personnes par défaut ou ajouter vos propres modèles. Cela vous permet de définir des collections de personnes avec des images de leur visage afin que Video Analyzer puisse les reconnaître dans vos vidéos.
+
+Notez également que vous pouvez créer des modèles personnalisés pour des langues (par exemple, pour spécifier une terminologie spécifique à un secteur d’activité que vous souhaitez que Video Analyzer reconnaisse) et des marques (par exemple, les noms d’entreprise ou de produits).
+
+## <a name="use-video-analyzer-widgets"></a>Utiliser les widgets Video Analyzer
+
+Le portail Video Analyzer constitue une interface utile pour gérer les projets d’indexation vidéo. Toutefois, il peut arriver que vous souhaitiez rendre la vidéo et ses insights accessibles aux personnes qui n’ont pas accès à votre compte Video Analyzer. Video Analyzer fournit des widgets que vous pouvez incorporer dans une page web à cet effet.
+
+1. Dans Visual Studio Code, dans le dossier **16-video-indexer**, ouvrez **analyze-video.html**. Il s’agit d’une page HTML de base à laquelle vous allez ajouter le **Lecteur** Video Analyzer et des widgets **Insights**. Notez la référence au script **vb.widgets.mediator.js** dans l’en-tête. Ce script permet à plusieurs widgets Video Analyzer de la page d’interagir les uns avec les autres.
+2. Dans le portail Video Analyzer, revenez à la page **Fichiers multimédias** et ouvrez votre vidéo **IA responsable**.
+3. Sous le lecteur vidéo, sélectionnez **&lt;/&gt; Incorporer** pour afficher le code iframe HTML afin d’incorporer les widgets.
+4. Dans la boîte de dialogue **Partager et incorporer**, sélectionnez le widget **Lecteur**, définissez la taille de la vidéo sur 560 x 315, puis copiez le code incorporé dans le Presse-papiers.
+5. Dans Visual Studio Code, dans le fichier **analyze-video.html**, collez le code copié sous le commentaire **&lt;-- Emplacement du widget Lecteur -- &gt;** .
+6. De retour dans la boîte de dialogue **Partager et incorporer**, sélectionnez le widget **Insights**, puis copiez le code incorporé dans le Presse-papiers. Fermez ensuite la boîte de dialogue **Partager et Incorporer**, revenez à Visual Studio Code, puis collez le code copié sous le commentaire **&lt;-- Emplacement du widget Insights -- &gt;** .
+7. Enregistrez le fichier . Ensuite, dans le volet **Explorateur**, cliquez avec le bouton droit sur **analyze-video.html**, puis sélectionnez **Révéler dans l’Explorateur de fichiers**.
+8. Dans l’Explorateur de fichiers, ouvrez **analyze-video.html** dans votre navigateur pour afficher la page web.
+9. Testez les widgets, en utilisant le widget **Insights** pour rechercher des insights et y accéder dans la vidéo.
+
+![Widgets Video Analyzer dans une page web](./images/video-indexer-widgets.png)
+
+## <a name="use-the-video-analyzer-rest-api"></a>Utiliser l’API REST Video Analyzer
+
+Video Analyzer fournit une API REST que vous pouvez utiliser pour charger et gérer des vidéos dans votre compte.
+
+### <a name="get-your-api-details"></a>Obtenir les détails de l’API
+
+Pour utiliser l’API Video Analyzer, vous avez besoin de quelques informations afin d’authentifier les requêtes :
+
+1. Dans le portail Video Analyzer, développez le menu (≡) et sélectionnez la page **Paramètres du compte**.
+2. Notez l’**ID de compte** sur cette page. Vous en aurez besoin ultérieurement.
+3. Ouvrez un nouvel onglet de navigateur et accédez au portail des développeurs Video Analyzer à l’adresse `https://api-portal.videoindexer.ai`. Connectez-vous à l’aide des informations d’identification de votre compte Video Analyzer.
+4. Dans la page **Profil**, affichez les **Abonnements** associés à votre profil.
+5. Sur la page présentant vos abonnements, notez que vous avez reçu deux clés (primaire et secondaire) pour chaque abonnement. Sélectionnez ensuite **Afficher** sur l’une des clés pour la voir. Vous aurez besoin de cette clé sous peu.
+
+### <a name="use-the-rest-api"></a>Utiliser l’API REST
+
+Maintenant que vous disposez de l’ID de compte et d’une clé API, vous pouvez utiliser l’API REST pour travailler avec des vidéos dans votre compte. Dans cette procédure, vous allez utiliser un script PowerShell pour effectuer des appels REST ; mais les mêmes principes s’appliquent avec des utilitaires HTTP tels que cURL ou Postman, ou tout langage de programmation capable d’envoyer et de recevoir du code JSON sur HTTP.
+
+Toutes les interactions avec l’API REST Video Analyzer suivent le même modèle :
+
+- Une demande initiale à la méthode **AccessToken** avec la clé API dans l’en-tête est utilisée pour obtenir un jeton d’accès.
+- Les demandes suivantes utilisent le jeton d’accès pour s’authentifier lors de l’appel de méthodes REST pour utiliser des vidéos.
+
+1. Dans Visual Studio Code, dans le dossier **16-video-indexer**, ouvrez **get-videos.ps1**.
+2. Dans le script PowerShell, remplacez les espaces réservés **YOUR_ACCOUNT_ID** et **YOUR_API_KEY** par les valeurs de l’ID de compte et de la clé API que vous avez identifiées précédemment.
+3. Notez que l’*emplacement* d’un compte gratuit est « essai ». Si vous avez créé un compte Video Analyzer illimité (avec une ressource Azure associée), vous pouvez le remplacer par l’emplacement où votre ressource Azure est approvisionnée (par exemple, « eastus »).
+4. Passez en revue le code dans le script, en notant que deux méthodes REST sont appelées : une pour obtenir un jeton d’accès et une autre pour répertorier les vidéos dans votre compte.
+5. Enregistrez vos modifications, puis, en haut à droite du volet de script, utilisez le bouton **&#9655;** pour exécuter le script.
+6. Affichez la réponse JSON du service REST, qui doit contenir les détails de la vidéo **IA responsable** que vous avez indexée précédemment.
+
+## <a name="more-information"></a>Plus d’informations
+
+Pour plus d’informations sur **Video Analyzer**, consultez la [documentation Video Analyzer](https://docs.microsoft.com/azure/azure-video-analyzer/video-analyzer-for-media-docs/).
