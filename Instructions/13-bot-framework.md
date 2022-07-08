@@ -2,12 +2,12 @@
 lab:
   title: Créer un bot à l’aide du kit de développement logiciel (SDK) Bot Framework
   module: Module 7 - Conversational AI and the Azure Bot Service
-ms.openlocfilehash: 7f2d78bec2ee9fab7bf5fad9ec9ef8ebc76b7fba
-ms.sourcegitcommit: d6da3bcb25d1cff0edacd759e75b7608a4694f03
+ms.openlocfilehash: ab51a1f11f4eee99838634d83b5d9261a8c20ecb
+ms.sourcegitcommit: 480c5898009ea964025fdecb57900aefeeac81fd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2021
-ms.locfileid: "145195599"
+ms.lasthandoff: 07/07/2022
+ms.locfileid: "147019882"
 ---
 # <a name="create-a-bot-with-the-bot-framework-sdk"></a>Créer un bot à l’aide du kit de développement logiciel (SDK) Bot Framework
 
@@ -28,13 +28,15 @@ Vous allez utiliser le kit de développement logiciel (SDK) Bot Framework pour c
 1. Démarrez le **Bot Framework Emulator** et, si vous êtes invité à installer une mise à jour, faites-le pour l’utilisateur actuellement connecté. Si vous n’êtes pas invité automatiquement, utilisez l’option **Vérifier la mise à jour** dans le menu **Aide** pour rechercher les mises à jour.
 2. Après avoir installé une mise à jour disponible, fermez le Bot Framework Emulator jusqu’à ce que vous en ayez besoin ultérieurement.
 
+> **Important** : Il peut arriver que le téléchargement de la mise à jour échoue et qu’une investigation soit en cours. Si vous ne voyez aucun progrès après quelques minutes à essayer de faire la mise à jour, vous pouvez abandonner le téléchargement et utiliser la version actuellement installée de l’émulateur.
+
 ### <a name="clone-the-repository-for-this-course"></a>Cloner le référentiel pour ce cours
 
 Si vous n’avez pas déjà cloné le référentiel de code **AI-102-AIEngineer** dans l’environnement où vous travaillez sur ce laboratoire, procédez comme suit. Sinon, ouvrez le dossier cloné dans Visual Studio Code.
 
 1. Démarrez Visual Studio Code.
-2. Ouvrez la palette (Maj+CTRL+P) et exécutez une commande **Git : Cloner** pour cloner le référentiel `https://github.com/MicrosoftLearning/AI-102-AIEngineer` vers un dossier local (peu importe quel dossier).
-3. Lorsque le référentiel a été cloné, ouvrez le dossier dans Visual Studio Code.
+2. Ouvrez la palette (Maj+CTRL+P) et exécutez une commande **Git : Cloner** pour cloner le référentiel `https://github.com/MicrosoftLearning/AI-102-AIEngineer` vers un dossier local (peu importe quel dossier).
+3. Une fois le référentiel cloné, ouvrez le dossier dans Visual Studio Code.
 4. Attendez que des fichiers supplémentaires soient installés pour prendre en charge les projets de code C# dans le référentiel.
 
     > **Remarque** : Si vous êtes invité à ajouter des ressources requises pour générer et déboguer, sélectionnez **Not Now** (Pas maintenant).
