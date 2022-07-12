@@ -2,16 +2,18 @@
 lab:
   title: Analyser des vidéos avec Video Analyzer
   module: Module 8 - Getting Started with Computer Vision
-ms.openlocfilehash: cd67c472b5ee15efce232483afc8aeeac552b50c
-ms.sourcegitcommit: d6da3bcb25d1cff0edacd759e75b7608a4694f03
+ms.openlocfilehash: ec23e53f363ed7c7df8fd598cfd1fc8807712f05
+ms.sourcegitcommit: 7191e53bc33cda92e710d957dde4478ee2496660
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2021
-ms.locfileid: "145195595"
+ms.lasthandoff: 07/09/2022
+ms.locfileid: "147041673"
 ---
 # <a name="analyze-video-with-video-analyzer"></a>Analyser des vidéos avec Video Analyzer
 
 Une grande proportion des données créées et consommées aujourd’hui est au format vidéo. **Video Analyzer for Media** est un service basé sur l’IA que vous pouvez utiliser pour indexer des vidéos et en extraire des insights.
+
+> **Remarque** : Depuis le 21 juin 2022, les fonctionnalités des services cognitifs qui retournent des informations d’identification personnelle sont limitées aux clients qui ont reçu [un accès limité](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-limited-access). En outre, les fonctionnalités qui déduisent l’état émotionnel ne sont plus disponibles. Ces restrictions peuvent affecter cet exercice réalisé en labo. Nous nous efforçons de résoudre ce problème, mais en attendant, vous risquez de rencontrer certaines erreurs lors des étapes ci-dessous, et nous vous prions de bien vouloir nous en excuser. Pour plus d’informations sur les modifications apportées par Microsoft, et leur motif, consultez [Responsible AI investments and safeguards for facial recognition](https://azure.microsoft.com/blog/responsible-ai-investments-and-safeguards-for-facial-recognition/) (Investissements responsables en matière d'IA et mesures de protection pour la reconnaissance faciale).
 
 ## <a name="clone-the-repository-for-this-course"></a>Cloner le référentiel pour ce cours
 

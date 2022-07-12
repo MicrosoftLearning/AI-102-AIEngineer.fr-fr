@@ -2,20 +2,22 @@
 lab:
   title: Détecter, analyser et reconnaître des visages
   module: Module 10 - Detecting, Analyzing, and Recognizing Faces
-ms.openlocfilehash: b9565f41eb67b916278508c729860a3471a9e0bd
-ms.sourcegitcommit: d6da3bcb25d1cff0edacd759e75b7608a4694f03
+ms.openlocfilehash: 29b0544e4f31f6e85eeba5cd8fb42951ca1334a9
+ms.sourcegitcommit: 7191e53bc33cda92e710d957dde4478ee2496660
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2021
-ms.locfileid: "145195586"
+ms.lasthandoff: 07/09/2022
+ms.locfileid: "147041655"
 ---
 # <a name="detect-analyze-and-recognize-faces"></a>Détecter, analyser et reconnaître des visages
 
 La possibilité de détecter, d’analyser et de reconnaître les visages humains est une fonctionnalité d’IA fondamentale. Dans cet exercice, vous allez explorer deux services Azure Cognitive Services que vous pouvez utiliser pour travailler avec les visages dans des images : le service **Vision par ordinateur** et le service **Visage**.
 
+> **Remarque** : Depuis le 21 juin 2022, les fonctionnalités des services cognitifs qui retournent des informations d’identification personnelle sont limitées aux clients qui ont reçu [un accès limité](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-limited-access). En outre, les fonctionnalités qui déduisent l’état émotionnel ne sont plus disponibles. Ces restrictions peuvent affecter cet exercice réalisé en labo. Nous nous efforçons de résoudre ce problème, mais en attendant, vous risquez de rencontrer certaines erreurs lors des étapes ci-dessous, et nous vous prions de bien vouloir nous en excuser. Pour plus d’informations sur les modifications apportées par Microsoft, et leur motif, consultez [Responsible AI investments and safeguards for facial recognition](https://azure.microsoft.com/blog/responsible-ai-investments-and-safeguards-for-facial-recognition/) (Investissements responsables en matière d'IA et mesures de protection pour la reconnaissance faciale).
+
 ## <a name="clone-the-repository-for-this-course"></a>Cloner le référentiel pour ce cours
 
-Si vous ne l’avez pas déjà fait, vous devez cloner le référentiel de code pour ce cours :
+Si vous ne l’avez pas déjà fait, vous devez cloner le référentiel de code pour ce cours :
 
 1. Démarrez Visual Studio Code.
 2. Ouvrez la palette (Maj+CTRL+P) et exécutez une commande **Git : Cloner** pour cloner le référentiel `https://github.com/MicrosoftLearning/AI-102-AIEngineer` vers un dossier local (peu importe quel dossier).
@@ -171,7 +173,7 @@ using (var imageData = File.OpenRead(imageFile))
             var r = face.FaceRectangle;
             Rectangle rect = new Rectangle(r.Left, r.Top, r.Width, r.Height);
             graphics.DrawRectangle(pen, rect);
-            string annotation = $"Person aged approximately {face.Age}";
+            string annotation = $"Person at approximately {face.Left}, {face.Top}";
             graphics.DrawString(annotation,font,brush,r.Left, r.Top);
         }
 
@@ -207,7 +209,7 @@ with open(image_file, mode="rb") as image_data:
             bounding_box = ((r.left, r.top), (r.left + r.width, r.top + r.height))
             draw = ImageDraw.Draw(image)
             draw.rectangle(bounding_box, outline=color, width=5)
-            annotation = 'Person aged approximately {}'.format(face.age)
+            annotation = 'Person at approximately {}, {}'.format(r.left, r.top)
             plt.annotate(annotation,(r.left, r.top), backgroundcolor=color)
 
         # Save annotated image
@@ -233,7 +235,7 @@ with open(image_file, mode="rb") as image_data:
     ```
 
 6. Observez la sortie, qui doit indiquer le nombre de visages détectés.
-7. Affichez le fichier **detected_faces.jpg** généré dans le même dossier que votre fichier de code pour voir les visages annotés. Dans ce cas, votre code a utilisé les attributs du visage pour estimer l’âge de chaque personne dans l’image et les coordonnées du cadre englobant pour dessiner un rectangle autour de chaque visage.
+7. Affichez le fichier **detected_faces.jpg** généré dans le même dossier que votre fichier de code pour voir les visages annotés. Dans ce cas, votre code a utilisé les attributs du visage pour définir la position de l’angle supérieur gauche du cadre ainsi que les coordonnées du cadre englobant pour dessiner un rectangle autour de chaque visage.
 
 ## <a name="prepare-to-use-the-face-sdk"></a>Préparer l’utilisation du Kit de développement logiciel (SDK) Visage
 
@@ -309,7 +311,7 @@ Bien que le service **Vision par ordinateur** offre une détection des visages d
 
 ## <a name="detect-and-analyze-faces"></a>Détecter et analyser les visages
 
-L’une des fonctionnalités les plus fondamentales du service Visage consiste à détecter les visages dans une image et à déterminer leurs attributs, tels que l’âge, les expressions émotionnelles, la couleur des cheveux, la présence de lunettes, etc.
+L’une des fonctionnalités les plus fondamentales du service Visage consiste à détecter les visages dans une image et à déterminer leurs attributs, tels que la posture de tête, le niveau de flou, la présence de lunettes, etc.
 
 1. Dans le fichier de code de votre application, dans la fonction **Main**, examinez le code qui s’exécute si l’utilisateur sélectionne l’option de menu **1**. Ce code appelle la fonction **DetectFaces**, en passant le chemin vers un fichier image.
 2. Recherchez la fonction **DetectFaces** dans le fichier de code et, sous le commentaire **Spécifier les fonctionnalités faciales à récupérer**, ajoutez le code suivant :
@@ -320,8 +322,8 @@ L’une des fonctionnalités les plus fondamentales du service Visage consiste �
     // Specify facial features to be retrieved
     List<FaceAttributeType?> features = new List<FaceAttributeType?>
     {
-        FaceAttributeType.Age,
-        FaceAttributeType.Emotion,
+        FaceAttributeType.Occlusion,
+        FaceAttributeType.Blur,
         FaceAttributeType.Glasses
     };
     ```
@@ -330,8 +332,8 @@ L’une des fonctionnalités les plus fondamentales du service Visage consiste �
 
     ```Python
     # Specify facial features to be retrieved
-    features = [FaceAttributeType.age,
-                FaceAttributeType.emotion,
+    features = [FaceAttributeType.occlusion,
+                FaceAttributeType.blur,
                 FaceAttributeType.glasses]
     ```
 
@@ -361,15 +363,11 @@ using (var imageData = File.OpenRead(imageFile))
         {
             // Get face properties
             Console.WriteLine($"\nFace ID: {face.FaceId}");
-            Console.WriteLine($" - Age: {face.FaceAttributes.Age}");
-            Console.WriteLine($" - Emotions:");
-            foreach (var emotion in face.FaceAttributes.Emotion.ToRankedList())
-            {
-                Console.WriteLine($"   - {emotion}");
-            }
-
+            Console.WriteLine($" - Mouth Occluded: {face.FaceAttributes.Occlusion.MouthOccluded}");
+            Console.WriteLine($" - Eye Occluded: {face.FaceAttributes.Occlusion.EyeOccluded}");
+            Console.WriteLine($" - Blur: {face.FaceAttributes.Blur.BlurLevel}");
             Console.WriteLine($" - Glasses: {face.FaceAttributes.Glasses}");
-
+            
             // Draw and annotate face
             var r = face.FaceRectangle;
             Rectangle rect = new Rectangle(r.Left, r.Top, r.Width, r.Height);
@@ -410,14 +408,16 @@ with open(image_file, mode="rb") as image_data:
             # Get face properties
             print('\nFace ID: {}'.format(face.face_id))
             detected_attributes = face.face_attributes.as_dict()
-            age = 'age unknown' if 'age' not in detected_attributes.keys() else int(detected_attributes['age'])
-            print(' - Age: {}'.format(age))
+            if 'blur' in detected_attributes:
+                print(' - Blur:')
+                for blur_name in detected_attributes['blur']:
+                    print('   - {}: {}'.format(blur_name, detected_attributes['blur'][blur_name]))
+                    
+            if 'occlusion' in detected_attributes:
+                print(' - Occlusion:')
+                for occlusion_name in detected_attributes['occlusion']:
+                    print('   - {}: {}'.format(occlusion_name, detected_attributes['occlusion'][occlusion_name]))
 
-            if 'emotion' in detected_attributes:
-                print(' - Emotions:')
-                for emotion_name in detected_attributes['emotion']:
-                    print('   - {}: {}'.format(emotion_name, detected_attributes['emotion'][emotion_name]))
-            
             if 'glasses' in detected_attributes:
                 print(' - Glasses:{}'.format(detected_attributes['glasses']))
 
@@ -446,7 +446,7 @@ with open(image_file, mode="rb") as image_data:
     dotnet run
     ```
 
-    *La sortie C# peut afficher des avertissements concernant les fonctions asynchrones utilisant maintenant l’opérateur **await**. Vous pouvez les ignorer.*
+    *La sortie C# peut afficher des avertissements sur les fonctions asynchrones utilisant maintenant l'opérateur **await**. Vous pouvez les ignorer.*
 
     **Python**
 
@@ -593,7 +593,7 @@ with open(image_2, mode="rb") as image_data:
     dotnet run
     ```
 
-    *La sortie C# peut afficher des avertissements concernant les fonctions asynchrones utilisant maintenant l’opérateur **await**. Vous pouvez les ignorer.*
+    *La sortie C# peut afficher des avertissements sur les fonctions asynchrones utilisant maintenant l'opérateur **await**. Vous pouvez les ignorer.*
 
     **Python**
 
@@ -713,7 +713,7 @@ for person in people:
     dotnet run
     ```
 
-    *La sortie C# peut afficher des avertissements concernant les fonctions asynchrones utilisant maintenant l’opérateur **await**. Vous pouvez les ignorer.*
+    *La sortie C# peut afficher des avertissements sur les fonctions asynchrones utilisant maintenant l'opérateur **await**. Vous pouvez les ignorer.*
 
     **Python**
 
@@ -854,7 +854,7 @@ with open(image_file, mode="rb") as image_data:
     dotnet run
     ```
 
-    *La sortie C# peut afficher des avertissements concernant les fonctions asynchrones utilisant maintenant l’opérateur **await**. Vous pouvez les ignorer.*
+    *La sortie C# peut afficher des avertissements sur les fonctions asynchrones utilisant maintenant l'opérateur **await**. Vous pouvez les ignorer.*
 
     **Python**
 
