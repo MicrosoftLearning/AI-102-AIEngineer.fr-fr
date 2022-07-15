@@ -342,7 +342,7 @@ Votre application d’horloge parlante accepte l’entrée parlée, mais elle ne
 
 Votre application d’horloge parlante utilise une voix par défaut, que vous pouvez modifier. Le service Speech prend en charge une gamme de voix *standard* ainsi que des voix *neuronales* quasi humaines. Vous pouvez également créer des voix *personnalisées*.
 
-> **Remarque** : Pour obtenir une liste des voix standard et neuronales, consultez [Prise en charge des langues et des voix](https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support#text-to-speech) dans la documentation du service Speech.
+> **Remarque** : Pour accéder à la liste des voix standard et neuronales, consultez l'article [Prise en charge des langues et de la voix](https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support#text-to-speech) pour le service Speech.
 
 1. Dans la fonction **TellTime**, sous le commentaire **Configurer la synthèse vocale**, modifiez le code comme suit pour spécifier une autre voix avant de créer le client **SpeechSynthesizer** :
 
@@ -438,4 +438,4 @@ Le langage SSML (Speech Synthesis Markup Language) vous permet de personnaliser 
 
 ## <a name="more-information"></a>Plus d’informations
 
-Pour plus d’informations sur l’utilisation des API **Reconnaissance vocale** et **Synthèse vocale**, consultez la [documentation du service Reconnaissance vocale](https://docs.microsoft.com/azure/cognitive-services/speech-service/index-speech-to-text) et la [documentation du service Synthèse vocale](https://docs.microsoft.com/azure/cognitive-services/speech-service/index-text-to-speech).
+Pour plus d’informations sur l’utilisation des API **Reconnaissance vocale** et **Synthèse vocale**, consultez les articles [Documentation sur la reconnaissance vocale](https://docs.microsoft.com/azure/cognitive-services/speech-service/index-speech-to-text) et [Documentation sur la synthèse vocale](https://docs.microsoft.com/azure/cognitive-services/speech-service/index-text-to-speech).

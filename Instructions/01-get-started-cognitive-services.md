@@ -1,6 +1,6 @@
 ---
 lab:
-  title: Bien démarrer avec Cognitive Services
+  title: Démarrer avec Cognitive Services
   module: Module 2 - Developing AI Apps with Cognitive Services
 ms.openlocfilehash: a05256a78dee051041320aa3556a43add5596ce9
 ms.sourcegitcommit: 5ffc20f6a590fe643c2b695b8dc04589411be36e
@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 05/31/2022
 ms.locfileid: "145951188"
 ---
-# <a name="get-started-with-cognitive-services"></a>Bien démarrer avec Cognitive Services
+# <a name="get-started-with-cognitive-services"></a>Démarrer avec Cognitive Services
 
 Dans cet exercice, vous allez commencer à utiliser Cognitive Services en créant une ressource **Cognitive Services** dans votre abonnement Azure et en l’utilisant à partir d’une application cliente. L’objectif de l’exercice n’est pas d’acquérir de l’expertise dans un service particulier, mais plutôt de se familiariser avec un modèle général pour l’approvisionnement et l’utilisation des services cognitifs en tant que développeur.
 
@@ -18,7 +18,7 @@ Dans cet exercice, vous allez commencer à utiliser Cognitive Services en créan
 Si vous n’avez pas déjà cloné le référentiel de code **AI-102-AIEngineer** dans l’environnement où vous travaillez sur ce laboratoire, procédez comme suit. Sinon, ouvrez le dossier cloné dans Visual Studio Code.
 
 1. Démarrez Visual Studio Code.
-2. Ouvrez la palette (Maj+CTRL+P) et exécutez une commande **Git : Cloner** pour cloner le référentiel `https://github.com/MicrosoftLearning/AI-102-AIEngineer` vers un dossier local (peu importe quel dossier).
+2. Ouvrez la palette (Maj+CTRL+P) et exécutez une commande **Git : Clone** pour cloner le référentiel `https://github.com/MicrosoftLearning/AI-102-AIEngineer` vers un dossier local (peu importe quel dossier).
 3. Une fois le référentiel cloné, ouvrez le dossier dans Visual Studio Code.
 4. Attendez que des fichiers supplémentaires soient installés pour prendre en charge les projets de code C# dans le référentiel.
 
@@ -26,7 +26,7 @@ Si vous n’avez pas déjà cloné le référentiel de code **AI-102-AIEngineer*
 
 ## <a name="provision-a-cognitive-services-resource"></a>Approvisionner une ressource Cognitive Services
 
-Azure Cognitive Services sont des services cloud qui encapsulent des fonctionnalités d’intelligence artificielle que vous pouvez incorporer dans vos applications. Vous pouvez approvisionner des ressources de services cognitifs individuelles pour des API spécifiques (par exemple, **Langue** ou **Vision par ordinateur**), ou vous pouvez approvisionner une ressource **Cognitive Services** générale qui fournit l’accès à plusieurs API via un point de terminaison et une clé uniques. Dans ce cas, vous allez utiliser une seule ressource **Cognitive Services**.
+Azure Cognitive Services est un ensemble de services cloud qui encapsulent des fonctionnalités d’intelligence artificielle que vous pouvez incorporer dans vos applications. Vous pouvez approvisionner des ressources de services cognitifs individuelles pour des API spécifiques (par exemple, **Langue** ou **Vision par ordinateur**), ou vous pouvez approvisionner une ressource **Cognitive Services** générale qui fournit l’accès à plusieurs API via un point de terminaison et une clé uniques. Dans ce cas, vous allez utiliser une seule ressource **Cognitive Services**.
 
 1. Ouvrez le portail Azure à l’adresse `https://portal.azure.com` et connectez-vous avec le compte Microsoft associé à votre abonnement Azure.
 2. Sélectionnez le bouton **&#65291;Créer une ressource**, recherchez *Cognitive Services*, puis créez une ressource **Cognitive Services** avec les paramètres suivants :
@@ -44,7 +44,7 @@ Azure Cognitive Services sont des services cloud qui encapsulent des fonctionnal
 
 ## <a name="use-a-rest-interface"></a>Utiliser une interface REST
 
-Les API des services cognitifs sont basées sur REST. Vous pouvez donc les utiliser en envoyant des requêtes JSON via HTTP. Dans cet exemple, vous allez explorer une application console qui utilise l’API REST **Langue** pour effectuer la détection de langue; mais le principe de base est le même pour toutes les API prises en charge par la ressource Cognitive Services.
+Les API des services cognitifs sont basées sur REST. Vous pouvez donc les utiliser en envoyant des requêtes JSON via HTTP. Dans cet exemple, vous allez explorer une application console qui utilise l’API REST Langue pour effectuer ladétection de **Langue**, mais le principe de base est le même pour toutes les API prises en charge par la ressourceCognitive Services.
 
 > **Remarque** : Dans cet exercice, vous pouvez choisir d’utiliser l’API REST à partir de **C#** ou **Python**. Dans les étapes qui suivent, effectuez les actions appropriées pour votre langage préféré.
 
@@ -63,10 +63,10 @@ Les API des services cognitifs sont basées sur REST. Vous pouvez donc les utili
     - Différents espaces de noms sont importés pour activer la communication HTTP
     - Le code de la fonction **Main** récupère le point de terminaison et la clé de votre ressource des services cognitifs. Ceux-ci seront utilisés pour envoyer des requêtes REST au service Analyse de texte.
     - Le programme accepte l’entrée utilisateur et utilise la fonction **GetLanguage** pour appeler l’API REST de détection de langue, Analyse de texte pour votre point de terminaison, Cognitive Services pour détecter la langue du texte entré.
-    - La requête envoyée à l’API se compose d’un objet JSON contenant les données d’entrée , dans ce cas, une collection d’objets de **document**, chacune ayant un **ID** et du **texte**.
+    - La requête envoyée à l’API se compose d’un objet JSON contenant les données d’entrée, dans ce cas, une collection d’objets de **document**, chacune ayant un **ID** et du **texte**.
     - La clé de votre service est incluse dans l’en-tête de demande pour authentifier votre application cliente.
     - La réponse du service est un objet JSON, que l’application cliente peut analyser.
-4. Cliquez avec le bouton droit de la souris sur le dossier **rest-client** et ouvrez un terminal intégré. Entrez ensuite la commande spécifique au langage suivante pour exécuter le programme :
+4. Cliquez avec le bouton droit de la souris sur le dossier **rest-client** et ouvrez un terminal intégré. Entrez ensuite la prochaine commande spécifique au langage pour exécuter le programme:
 
     **C#**
 
@@ -88,7 +88,7 @@ Les API des services cognitifs sont basées sur REST. Vous pouvez donc les utili
 Vous pouvez écrire du code qui consomme directement les API REST des services cognitifs, mais il existe des kits de développement logiciel (SDK) pour de nombreux langages de programmation populaires, notamment Microsoft C#, Python et Node.js. L’utilisation d’un kit de développement logiciel (SDK) peut simplifier considérablement le développement d’applications qui consomment les services cognitifs.
 
 1. Dans Visual Studio Code, dans le volet **Explorateur**, dans le dossier **01-getting-started**, développez le dossier **C-Sharp** ou **Python** en fonction de votre préférence de langage.
-2. Cliquez avec le bouton droit de la souris sur le dossier **sdk-client** et ouvrez un terminal intégré. Installez ensuite le package SDK d’analyse de texte en exécutant la commande appropriée pour votre préférence de langage :
+2. Cliquez avec le bouton droit sur le dossier **sdk-client** et ouvrez un terminal intégré. Installez ensuite le package SDK d’analyse de texte en exécutant la commande appropriée pour votre préférence de langage :
 
     **C#**
 

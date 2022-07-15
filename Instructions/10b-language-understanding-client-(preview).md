@@ -12,7 +12,7 @@ ms.locfileid: "145195631"
 
 La fonctionnalité de Language Understanding de conversation du service cognitif Azure pour le langage vous permet de définir un modèle de langage courant que les applications clientes peuvent utiliser pour interpréter les entrées en langage naturel des utilisateurs, prédire l’*intention* des utilisateurs (ce qu’ils veulent obtenir) et identifier les *entités* auxquelles l’intention doit être appliquée. Vous pouvez créer des applications clientes qui consomment des modèles de compréhension du langage courant directement par le biais d’interfaces REST ou à l’aide de kits de développement logiciel (SDK) spécifiques au langage.
 
-## <a name="clone-the-repository-for-this-course"></a>Cloner le référentiel pour ce cours
+## <a name="clone-the-repository-for-this-course"></a>Cloner le référentiel pour cette formation
 
 Si vous avez déjà cloné le référentiel de code **AI-102-AIEngineer** dans l’environnement dans lequel vous travaillez sur ce laboratoire, ouvrez-le dans Visual Studio Code ; sinon, procédez comme suit pour le cloner maintenant.
 
@@ -34,7 +34,7 @@ Si vous disposez déjà d’une ressource de service langage dans votre abonneme
 
 2. Sélectionnez le bouton **&#65291;Créer une ressource**, recherchez *service de langage*, puis créez une ressource du **service de langage** avec les paramètres suivants :
 
-    - **Fonctionnalités par défaut** : All
+    - **Fonctionnalités par défaut** : toutes
     - **Fonctionnalités personnalisées** : aucune
     - **Abonnement** : *votre abonnement Azure*
     - **Groupe de ressources** : *Choisissez ou créez un groupe de ressources. (Si vous utilisez un abonnement restreint, vous n’avez peut-être pas l’autorisation de créer un groupe de ressources. Dans ce cas, utilisez le groupe fourni.)*

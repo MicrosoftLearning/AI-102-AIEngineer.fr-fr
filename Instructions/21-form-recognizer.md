@@ -15,7 +15,7 @@ Supposons qu'une entreprise demande actuellement à ses employés d'acheter manu
 
 **Form Recognizer** est un service cognitif qui permet aux utilisateurs de créer des logiciels de traitement de données automatisé. Ce logiciel peut extraire du texte, des paires clé/valeur et des tables à partir de documents de formulaire à l’aide de la reconnaissance optique de caractères (OCR). Form Recognizer possède des modèles prédéfinis pour reconnaître les factures, les reçus et les cartes de visite. Le service offre également la possibilité d’entraîner des modèles personnalisés. Dans cet exercice, nous allons nous concentrer sur la création de modèles personnalisés.
 
-## <a name="clone-the-repository-for-this-course"></a>Cloner le référentiel pour ce cours
+## <a name="clone-the-repository-for-this-course"></a>Cloner le référentiel pour cette formation
 
 Si vous ne l’avez pas déjà fait, vous devez cloner le référentiel de code pour ce cours :
 
@@ -34,9 +34,9 @@ Pour utiliser le service Form Recognizer, vous devez créer une ressource Form R
 
 2. Sélectionnez le bouton **&#65291;Créer une ressource**, recherchez *Form Recognizer* et créez une ressource **Form Recognizer** avec les paramètres suivants :
     - **Abonnement** : *votre abonnement Azure*
-    - **Groupe de ressources** : *Choisissez ou créez un groupe de ressources. (Si vous utilisez un abonnement restreint, vous n’avez peut-être pas l’autorisation de créer un groupe de ressources. Dans ce cas, utilisez le groupe fourni.)*
+    - **Groupe de ressources** : *choisissez ou créez un groupe de ressources. (Si vous utilisez un abonnement restreint, vous n’avez peut-être pas l’autorisation de créer un groupe de ressources. Dans ce cas, utilisez le groupe fourni.)*
     - **Région** : *choisissez n’importe quelle région disponible*
-    - **Nom** : *Entrez un nom unique.*
+    - **Nom** : *entrez un nom unique.*
     - **Niveau tarifaire** : F0
 
     > **Remarque** : Si vous avez déjà un service de reconnaissance de formulaire F0 dans votre abonnement, sélectionnez **S0** pour celui-ci.
@@ -55,11 +55,11 @@ Vous allez utiliser les exemples de formulaires du dossier **21-custom-form/samp
 
     Les fichiers **.json** ont été générés pour vous et contiennent des informations d’étiquette. Les fichiers seront chargés dans votre conteneur de stockage d’objets blob en même temps que les formulaires. 
 
-2. Retournez au portail Azure à [https://portal.azure.com](https://portal.azure.com).
+2. Retournez au portail Azure sur la page [https://portal.azure.com](https://portal.azure.com).
 
 3. Affichez le **Groupe de ressources** dans lequel vous avez créé la ressource Form Recognizer précédemment.
 
-4. Dans la page **Vue d’ensemble** de votre groupe de ressources, notez l’**ID d’abonnement** et l’**Emplacement**. Vous aurez besoin de ces valeurs, ainsi que du nom de votre **groupe de ressources** dans les étapes suivantes.
+4. Sur la page **Vue d’ensemble** de votre groupe de ressources, notez l’**ID d’abonnement** et l’**Emplacement**. Vous aurez besoin de ces valeurs, ainsi que du nom de votre **groupe de ressources** dans les étapes suivantes.
 
 ![Un exemple de la page de groupe de ressources.](./images/resource_group_variables.png)
 
@@ -117,7 +117,7 @@ Vous allez maintenant entraîner un modèle à l’aide des fichiers **.jpg** et
     *Les fichiers d'information sur les champs ont été fournis pour vous dans cet exercice. Pour vos propres projets, vous pouvez créer ces fichiers à l'aide de [Form Recognizer Studio](https://formrecognizer.appliedai.azure.com/studio). Lorsque vous utilisez l'outil, vos fichiers d'information de champ sont automatiquement créés et stockés dans votre compte de stockage connecté.*
 
 4. Dans Visual Studio Code, dans le dossier **de 21-custom-form**, développez le dossier **C-Sharp** ou **Python** en fonction de votre préférence de langage.
-5. Cliquez avec le bouton droit de la souris sur le dossier **train-model** et ouvrez un terminal intégré.
+5. Cliquez avec le bouton droit sur le dossier **train-model** puis sélectionnez Ouvrir dans le terminal intégré.
 
 6. Installez le package Form Recognizer en exécutant la commande appropriée pour votre préférence de langage :
 
@@ -178,7 +178,7 @@ python train-model.py
 
 1. Dans le dossier **21-custom-form**, dans le sous-dossier de votre langage préféré (**C-Sharp** ou **Python**), développez le dossier **test-model**.
 
-2. Cliquez avec le bouton droit de la souris sur le dossier **train-model** et sélectionnez **ouvrir un terminal intégré**.
+2. Cliquez avec le bouton droit sur le dossier **train-model** et sélectionnez **ouvrir un terminal intégré**.
 
 3. Dans le terminal du dossier **test-model**, installez le package Form Recognizer en exécutant la commande appropriée pour votre préférence de langage :
 
@@ -194,7 +194,7 @@ dotnet add package Azure.AI.FormRecognizer --version 3.0.0
 pip install azure-ai-formrecognizer==3.0.0
 ```
 
-*Cela n’est pas strictement nécessaire si vous avez utilisé pip précédemment pour installer le package dans l’environnement Python ; mais cela ne nuit pas de s’assurer qu’il est installé !*
+*Cela n’est pas obligatoire si vous avez utilisé pip précédemment pour installer le package dans l’environnement Python. Cependant, il peut être utile de vérifier s'il est installé.*
 
 4. Dans le même terminal pour le dossier **test-model**, installez la bibliothèque Tabulate. Cela fournit votre sortie dans une table :
 
@@ -239,4 +239,4 @@ python test-model.py
 
 ## <a name="more-information"></a>Plus d’informations
 
-Pour plus d’informations sur le service Form Recognizer, consultez la [documentation sur Form Recognizer](https://docs.microsoft.com/azure/cognitive-services/form-recognizer/).
+Pour plus d’informations sur le service Form Recognizer, consultez l'article [Documentation Azure Form Recognizer](https://docs.microsoft.com/azure/cognitive-services/form-recognizer/).

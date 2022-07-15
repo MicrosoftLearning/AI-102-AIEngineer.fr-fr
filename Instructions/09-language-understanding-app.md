@@ -17,11 +17,11 @@ Par exemple, on peut s'attendre à ce qu'une application de compréhension de la
 
 *Quelle heure est-il à Londres ?*
 
-Ce type d’entrée est un exemple d’*énoncé* (quelque chose qu’un utilisateur peut dire ou type), pour lequel l’*intention* souhaitée est d’obtenir le temps dans un emplacement spécifique (une *entité*) ; dans ce cas, Londres.
+Ce type d’entrée est un exemple d’*énoncé* (quelque chose qu’un utilisateur peut dire ou taper), pour lequel l’*intention* souhaitée est d’obtenir le temps dans un emplacement spécifique (une *entité*) ; dans ce cas, Londres.
 
 > **Remarque** : La tâche de l’application de compréhension du langage consiste à prédire l’intention de l’utilisateur et à identifier toutes les entités auxquelles l’intention s’applique. Ce <u>n’est pas</u> son travail d’effectuer réellement les actions nécessaires pour satisfaire l’intention. Par exemple, l’application d’horloge peut utiliser une application linguistique pour discerner que l’utilisateur souhaite connaître l’heure à Londres ; mais l’application cliente elle-même doit ensuite implémenter la logique pour déterminer le bon temps et la présenter à l’utilisateur.
 
-## <a name="clone-the-repository-for-this-course"></a>Cloner le référentiel pour ce cours
+## <a name="clone-the-repository-for-this-course"></a>Cloner le référentiel pour cette formation
 
 Si vous n’avez pas déjà cloné le référentiel de code **AI-102-AIEngineer** dans l’environnement où vous travaillez sur ce laboratoire, procédez comme suit. Sinon, ouvrez le dossier cloné dans Visual Studio Code.
 

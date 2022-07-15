@@ -15,7 +15,7 @@ La Recherche cognitive Azure utilise un pipeline d’enrichissement des compéte
 
 Dans cet exercice, vous allez créer une compétence personnalisée qui remplit la fréquence des mots individuels dans un document pour générer une liste des cinq premiers mots les plus utilisés et l’ajouter à une solution de recherche pour Margie’s Travel, une agence de voyage fictive.
 
-## <a name="clone-the-repository-for-this-course"></a>Cloner le référentiel pour ce cours
+## <a name="clone-the-repository-for-this-course"></a>Cloner le référentiel pour cette formation
 
 Si vous avez déjà cloné le référentiel de code **AI-102-AIEngineer** dans l’environnement dans lequel vous travaillez sur ce laboratoire, ouvrez-le dans Visual Studio Code ; sinon, procédez comme suit pour le cloner maintenant.
 
@@ -33,7 +33,7 @@ Si vous avez déjà cloné le référentiel de code **AI-102-AIEngineer** dans l
 1. Ouvrez le portail Azure à l’adresse `https://portal.azure.com` et connectez-vous avec le compte Microsoft associé à votre abonnement Azure.
 2. Affichez les **Groupes de ressources** dans votre abonnement.
 3. Si vous utilisez un abonnement restreint dans lequel un groupe de ressources a été fourni pour vous, sélectionnez le groupe de ressources pour afficher ses propriétés. Sinon, créez un groupe de ressources avec le nom de votre choix et accédez-y lors de sa création.
-4. Dans la page **Vue d’ensemble** de votre groupe de ressources, notez l’**ID d’abonnement** et l’**Emplacement**. Vous aurez besoin de ces valeurs, ainsi que du nom du groupe de ressources dans les étapes suivantes.
+4. Sur la page **Vue d’ensemble** de votre groupe de ressources, notez l’**ID d’abonnement** et l’**Emplacement**. Vous aurez besoin de ces valeurs, ainsi que du nom du groupe de ressources dans les étapes suivantes.
 5. Dans Visual Studio Code, développez le dossier **23-custom-search-skill** et sélectionnez **setup.cmd**. Vous allez utiliser ce script de commandes pour exécuter les commandes d’interface de ligne de commande (CLI) Azure requises pour créer les ressources Azure dont vous avez besoin.
 6. Cliquez avec le bouton droit de la souris sur le dossier **23-custom-search-skill**, puis sélectionnez **Ouvrir dans le terminal intégré**.
 7. Dans le volet Terminal, entrez la commande suivante pour établir une connexion authentifiée à votre abonnement Azure.

@@ -11,11 +11,11 @@ ms.locfileid: "145195605"
 ---
 # <a name="translate-speech"></a>Traduire du contenu vocal
 
-Le service **Speech** inclut une API de **traduction vocale** que vous pouvez utiliser pour traduire une langue parlée. Par exemple, supposons que vous souhaitiez développer une application de traduction que des utilisateurs peuvent utiliser lorsqu’ils voyagent dans des pays où ils ne parlent pas la langue locale. Ils seraient en mesure de dire des phrases telles que « Où se trouve la gare ? » ou « J’ai besoin de trouver une pharmacie » dans leur propre langue et de les traduire dans la langue locale.
+Le service **Speech** inclut une API **Traduction vocale** que vous pouvez utiliser pour traduire une langue parlée. Par exemple, supposons que vous souhaitiez développer une application de traduction que des utilisateurs peuvent utiliser lorsqu’ils voyagent dans des pays où ils ne parlent pas la langue locale. Ils seraient en mesure de dire des phrases telles que « Où se trouve la gare ? » ou « J’ai besoin de trouver une pharmacie » dans leur propre langue et de les traduire dans la langue locale.
 
 **Remarque** : Cet exercice nécessite que vous utilisiez un ordinateur avec des haut-parleurs ou des écouteurs. Pour une expérience optimale, un microphone est également nécessaire. Certains environnements virtuels hébergés peuvent être en mesure de capturer l’audio à partir de votre microphone local, mais si cela ne fonctionne pas (ou si vous n’avez pas de microphone du tout), vous pouvez utiliser un fichier audio fourni pour l’entrée vocale. Suivez attentivement les instructions, car vous devez choisir différentes options selon que vous utilisez un microphone ou le fichier audio.
 
-## <a name="clone-the-repository-for-this-course"></a>Cloner le référentiel pour ce cours
+## <a name="clone-the-repository-for-this-course"></a>Cloner le référentiel pour cette formation
 
 Si vous avez déjà cloné le référentiel de code **AI-102-AIEngineer** dans l’environnement dans lequel vous travaillez sur ce laboratoire, ouvrez-le dans Visual Studio Code ; sinon, procédez comme suit pour le cloner maintenant.
 
@@ -33,9 +33,9 @@ Si vous n’en avez pas encore dans votre abonnement, vous devez approvisionner 
 1. Ouvrez le portail Azure à l’adresse `https://portal.azure.com` et connectez-vous avec le compte Microsoft associé à votre abonnement Azure.
 2. Sélectionnez le bouton **&#65291;Créer une ressource**, recherchez *Cognitive Services*, puis créez une ressource **Cognitive Services** avec les paramètres suivants :
     - **Abonnement** : *votre abonnement Azure*
-    - **Groupe de ressources** : *Choisissez ou créez un groupe de ressources. (Si vous utilisez un abonnement restreint, vous n’avez peut-être pas l’autorisation de créer un groupe de ressources. Dans ce cas, utilisez le groupe fourni.)*
+    - **Groupe de ressources** : *choisissez ou créez un groupe de ressources. (Si vous utilisez un abonnement restreint, vous n’avez peut-être pas l’autorisation de créer un groupe de ressources. Dans ce cas, utilisez le groupe fourni.)*
     - **Région** : *choisissez n’importe quelle région disponible*
-    - **Nom** : *Entrez un nom unique.*
+    - **Nom** : *entrez un nom unique.*
     - **Niveau tarifaire** : Standard S0
 3. Cochez les cases nécessaires et créez la ressource.
 4. Attendez la fin du déploiement, puis visualisez les détails du déploiement.

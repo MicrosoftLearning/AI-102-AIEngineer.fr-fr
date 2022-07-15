@@ -37,9 +37,9 @@ Pour créer et héberger un base de connaissances pour répondre aux questions, 
 3. Cliquez sur **Sélectionner** sur le bloc **Réponses aux questions personnalisées**. Cliquez ensuite sur **Continuez pour créer votre ressource**. Vous devez entrer les paramètres suivants :
     
     - **Abonnement** : *votre abonnement Azure*
-    - **Groupe de ressources** : *Choisissez ou créez un groupe de ressources. (Si vous utilisez un abonnement restreint, vous n’avez peut-être pas l’autorisation de créer un groupe de ressources. Dans ce cas, utilisez le groupe fourni.)*
-    - **Région** : *choisissez n’importe quel emplacement disponible*
-    - **Nom** : *Entrez un nom unique.*
+    - **Groupe de ressources** : *choisissez ou créez un groupe de ressources. (Si vous utilisez un abonnement restreint, vous n’avez peut-être pas l’autorisation de créer un groupe de ressources. Dans ce cas, utilisez le groupe fourni.)*
+    - **Région** : *choisissez n’importe quelle région disponible*
+    - **Nom** : *entrez un nom unique.*
     - **Niveau tarifaire** : Standard S
     - **Emplacement de la Recherche Azure**\* : *Choisissez un emplacement dans la même région du monde que votre ressource linguistique*.
     - **Niveau tarifaire Recherche Azure** : Gratuit (F) (*Si ce niveau n'est pas disponible, sélectionnez Basique (B)* )

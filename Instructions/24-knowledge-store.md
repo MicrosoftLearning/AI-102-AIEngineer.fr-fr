@@ -19,7 +19,7 @@ La Recherche cognitive Azure utilise un pipeline d’enrichissement des compéte
 
 Dans cet exercice, vous allez implémenter une base de connaissances pour *Margie’s Travel*, une agence de voyages fictive qui utilise des informations dans des brochures et des revues d’hôtel pour aider ses clients à planifier leurs voyages.
 
-## <a name="clone-the-repository-for-this-course"></a>Cloner le référentiel pour ce cours
+## <a name="clone-the-repository-for-this-course"></a>Cloner le référentiel pour cette formation
 
 Si vous avez déjà cloné le référentiel de code **AI-102-AIEngineer** dans l’environnement dans lequel vous travaillez sur ce laboratoire, ouvrez-le dans Visual Studio Code ; sinon, procédez comme suit pour le cloner maintenant.
 
@@ -97,7 +97,7 @@ Vous allez utiliser l’interface REST pour envoyer des définitions JSON à vos
     DefaultEndpointsProtocol=https;AccountName=ai102str123;AccountKey=12345abcdefg...==;EndpointSuffix=core.windows.net
     ```
 
-    *Vous trouverez la chaîne de connexion dans la page **Clés d’accès** de votre compte de stockage dans le Portail Azure.*
+    *Vous trouverez la chaîne de connexion sur la page **Clés d’accès** de votre compte de stockage dans le Portail Azure.*
 
 3. Enregistrez et fermez le fichier JSON mis à jour.
 4. Dans le dossier **create-search**, ouvrez **skillset.json**. Ce fichier contient une définition JSON pour un ensemble de compétences nommé **margies-knowledge-skillset**.
@@ -131,7 +131,7 @@ Maintenant que vous avez préparé les objets JSON qui définissent vos composan
     *Vous trouverez ces valeurs dans les pages **Vue d’ensemble** et **Clés** de votre ressource Recherche cognitive Azure dans le Portail Azure.*
 
 3. Enregistrez le fichier de commandes mis à jour.
-4. Cliquez avec le bouton droit de la souris sur le dossier **create-search**, puis sélectionnez **Ouvrir dans le terminal intégré**.
+4. Cliquez avec le bouton droit sur le dossier **create-search**, puis sélectionnez **Ouvrir dans le terminal intégré**.
 5. Dans le volet Terminal du dossier **create-search**, entrez la commande suivante pour exécuter le script de commandes.
 
     ```
@@ -221,4 +221,4 @@ La capacité de créer des projections de *tables* vous permet de créer des sol
 
 ## <a name="more-information"></a>Plus d’informations
 
-Pour en savoir plus sur la création de bases de connaissances avec Recherche cognitive Azure, consultez la [documentation Recherche cognitive Azure](https://docs.microsoft.com/azure/search/knowledge-store-concept-intro).
+Pour en savoir plus sur la création de bases de connaissances avec la Recherche cognitive Azure, consultez l'article Base de [connaissances dans Recherche cognitive Azure](https://docs.microsoft.com/azure/search/knowledge-store-concept-intro).

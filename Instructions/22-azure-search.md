@@ -17,7 +17,7 @@ Par exemple, supposons que *Margie’s Travel* est une agence de voyages spécia
 
 Pour relever ce défi, Margie’s Travel peut utiliser la recherche cognitive Azure pour implémenter une solution dans laquelle les documents sont indexés et enrichis à l’aide de compétences cognitives basées sur l’IA pour faciliter leur recherche.
 
-## <a name="clone-the-repository-for-this-course"></a>Cloner le référentiel pour ce cours
+## <a name="clone-the-repository-for-this-course"></a>Cloner le référentiel pour cette formation
 
 Si vous n’avez pas déjà cloné le référentiel de code **AI-102-AIEngineer** dans l’environnement où vous travaillez sur ce laboratoire, procédez comme suit. Sinon, ouvrez le dossier cloné dans Visual Studio Code.
 
@@ -36,7 +36,7 @@ La solution que vous allez créer pour Margie’s Travel nécessite les ressourc
 - Une ressource **Cognitive Services**, qui fournit les services d’IA pour les compétences que votre solution de recherche peut utiliser pour enrichir les données de la source de données avec des Insights générés par IA.
 - Un **compte de stockage** avec un conteneur blob dans lequel les documents à rechercher sont stockés.
 
-> **Important** : Vos ressources Recherche cognitive Azure et Cognitive Services doivent se trouver au même emplacement !
+> **Important** : Vos ressources Recherche cognitive Azure et Cognitive Services doivent se trouver au même emplacement.
 
 ### <a name="create-an-azure-cognitive-search-resource"></a>Créer une ressource Recherche cognitive Azure
 
@@ -44,7 +44,7 @@ La solution que vous allez créer pour Margie’s Travel nécessite les ressourc
 2. Sélectionnez le bouton **&#65291;Créer une ressource**, recherchez *recherche*, puis créez une ressource **Recherche cognitive Azure** avec les paramètres suivants :
     - **Abonnement** : *votre abonnement Azure*
     - **Groupe de ressources** : *Créez un groupe de ressources. (Si vous utilisez un abonnement restreint, vous n’avez peut-être pas l’autorisation de créer un groupe de ressources. Dans ce cas, utilisez le groupe fourni.)*
-    - **Nom du service** : *Entrez un nom unique*
+    - **Nom du service** : *entrez un nom unique*
     - **Emplacement** : *Sélectionnez un emplacement. Remarquez que vos ressources Recherche cognitive Azure et Cognitive Services doivent se trouver au même emplacement*
     - **Niveau tarifaire** : De base
 
@@ -59,7 +59,7 @@ Si vous n’en avez pas encore dans votre abonnement, vous devez provisionner un
     - **Abonnement** : *votre abonnement Azure*
     - **Groupe de ressources** : *le même groupe de ressources que votre ressource Recherche cognitive Azure*
     - **Région** : *la même région que votre ressource Recherche cognitive Azure*
-    - **Nom** : *Entrez un nom unique.*
+    - **Nom** : *entrez un nom unique.*
     - **Niveau tarifaire** : Standard S0
 2. Cochez les cases nécessaires et créez la ressource.
 3. Attendez la fin du déploiement, puis visualisez les détails du déploiement.
@@ -69,7 +69,7 @@ Si vous n’en avez pas encore dans votre abonnement, vous devez provisionner un
 1. Revenez à la page d’accueil du portail Azure, puis sélectionnez le bouton **&#65291;Créer une ressource**, recherchez *Compte de stockage*, puis créez une ressource **Compte de stockage** avec les paramètres suivants :
     - **Abonnement** : *votre abonnement Azure*
     - **Groupe de ressources** : **Le même groupe de ressources que vos ressources Recherche cognitive Azure et Cognitive Services*
-    - **Nom du compte de stockage** : *Entrez un nom unique*
+    - **Nom du compte de stockage** : *entrez un nom unique*
     - **Région** : *choisissez n’importe quelle région disponible*
     - **Performances** : standard
     - **Réplication** : Stockage localement redondant (LRS)
@@ -164,7 +164,7 @@ Maintenant que vous avez un index, vous pouvez y effectuer des recherches.
 1. En haut de la page **Vue d’ensemble** de votre ressource Recherche cognitive Azure, sélectionnez **Rechercher dans l’explorateur**.
 2. Dans l’Explorateur de recherche, dans la zone **Chaîne de requête**, entrez `*` (un astérisque unique), puis sélectionnez **Rechercher**.
 
-    Cette requête récupère tous les documents dans l’index au format JSON. Examinez les résultats et notez les champs de chaque document, qui contiennent du contenu, des métadonnées et des données enrichies extraites par les compétences cognitives que vous avez sélectionnées.
+    Cette requête extrait tous les documents dans l’index au format JSON. Examinez les résultats et notez les champs de chaque document, qui contiennent du contenu, des métadonnées et des données enrichies extraites par les compétences cognitives que vous avez sélectionnées.
 
 3. Modifiez la chaîne de requête par `search=*&$count=true` et lancez la recherche.
 

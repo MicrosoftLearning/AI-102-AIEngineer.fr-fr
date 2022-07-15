@@ -32,9 +32,9 @@ Si vous n’en avez pas encore dans votre abonnement, vous devez provisionner un
 
 1. Ouvrez le portail Azure à l’adresse `https://portal.azure.com` et connectez-vous avec le compte Microsoft associé à votre abonnement Azure.
 2. Sélectionnez le bouton **&#65291;Créer une ressource**, recherchez *Cognitive Services*, puis créez une ressource **Cognitive Services** avec les paramètres suivants :
-    - **Abonnement** : *votre abonnement Azure*
+    - **Abonnement** : *Votre abonnement Azure*
     - **Groupe de ressources** : *Choisissez ou créez un groupe de ressources. (Si vous utilisez un abonnement restreint, vous n’avez peut-être pas l’autorisation de créer un groupe de ressources. Dans ce cas, utilisez le groupe fourni.)*
-    - **Région** : *choisissez n’importe quelle région disponible*
+    - **Région** : *Choisissez n’importe quelle région disponible*
     - **Nom** : *Entrez un nom unique.*
     - **Niveau tarifaire** : Standard S0
 3. Cochez les cases nécessaires et créez la ressource.
@@ -48,7 +48,7 @@ Lorsque vous avez créé votre ressource de service cognitif, deux clés d’aut
     - *Point de terminaison* HTTP auquel les applications clientes peuvent envoyer des requêtes.
     - Deux *clés* qui peuvent être utilisées pour l’authentification (les applications clientes peuvent utiliser l’une des clés. Une pratique courante consiste à en utiliser une pour le développement, et une autre pour la production. Vous pouvez facilement régénérer la clé de développement une fois que les développeurs ont terminé leur travail pour empêcher l’accès continu.
     - *Emplacement* dans lequel la ressource est hébergée. Cela est nécessaire pour les demandes adressées à certaines API (mais pas toutes).
-2. Dans Visual Studio Code, faites un clic droit sur le dossier **02-cognitive-security** et ouvrez un terminal intégré. Ensuite, entrez la commande suivante pour vous connecter à votre abonnement Azure à l’aide d’Azure CLI.
+2. Dans Visual Studio Code, cliquez avec le bouton droit sur le dossier **02-cognitive-security** et ouvrez un terminal intégré. Ensuite, entrez la commande suivante pour vous connecter à votre abonnement Azure à l’aide d’Azure CLI.
 
     ```
     az login
@@ -102,7 +102,7 @@ La commande retourne un document JSON contenant des informations sur la langue d
 
 La liste des clés de votre ressource de services cognitifs est retournée : notez que **key1** a changé depuis la dernière récupération.
 
-7. Réexécutez la commande **rest-test** avec l’ancienne clé (vous pouvez utiliser la clé **^** pour parcourir les commandes précédentes) et vérifier qu’elle échoue maintenant.
+7. Réexécutez la commande **rest-test** avec l’ancienne clé (vous pouvez utiliser la clé **^** pour parcourir les commandes précédentes) et vérifiez qu’elle échoue maintenant.
 8. Modifiez la commande *curl* dans **rest-test.cmd** en remplaçant la clé par la nouvelle valeur **key1**, puis enregistrez les modifications. Réexécutez ensuite la commande **rest-test** et vérifiez qu’elle réussit.
 
 > **Conseil** : Dans cet exercice, vous avez utilisé les noms complets des paramètres Azure CLI, tels que **--resource-group**.  Vous pouvez également utiliser des alternatives plus courtes, telles que **-g**, pour rendre vos commandes moins détaillées (mais un peu plus difficile à comprendre).  La [référence des commandes CLI de Cognitive Services](https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest) répertorie les options de paramètre pour chaque commande CLI de services cognitifs.
@@ -117,12 +117,12 @@ Tout d’abord, vous devez créer un coffre de clés et ajouter un *secret* pour
 
 1. Notez la valeur **key1** de votre ressource de services cognitifs (ou copiez-la dans le Presse-papiers).
 2. Dans le Portail Azure, dans la page **Accueil**, sélectionnez le bouton **&#65291;Créer une ressource**, recherchez *Key Vault* et créez une ressource **Key Vault** avec les paramètres suivants :
-    - **Abonnement** : *votre abonnement Azure*
+    - **Abonnement** : *Votre abonnement Azure*
     - **Groupe de ressources** : *Le même groupe de ressources que votre ressource de service cognitif*
     - **Nom du coffre de clés** : *Entrez un nom unique*
     - **Région** : *La même région que votre ressource de service cognitif*
     - **Niveau tarifaire** : Standard
-3. Attendez que le déploiement soit terminé, puis allez dans votre ressource de coffre de clés.
+3. Attendez que le déploiement soit terminé, puis accédez à votre ressource de coffre de clés.
 4. Dans le volet de navigation gauche, sélectionnez **Secrets** (dans la section Paramètres).
 5. Sélectionnez **+ Générer/Importer** et ajoutez un nouveau secret avec les paramètres suivants :
     - **Options de chargement** : Manuelle
@@ -174,7 +174,7 @@ Vous êtes maintenant prêt à utiliser l’identité du principal de service da
 > **Remarque** : Dans cet exercice, nous allons stocker les informations d’identification du principal de service dans la configuration de l’application et les utiliser pour authentifier une identité **ClientSecretCredential** dans votre code d’application. Cela est parfait pour le développement et le test, mais dans une application de production réelle, un administrateur affecterait une *identité managée* à l’application afin qu’elle utilise l’identité du principal de service pour accéder aux ressources, sans mettre en cache ou stocker le mot de passe.
 
 1. Dans Visual Studio Code, dans le dossier **02-cognitive-security**, développez le dossier **C-Sharp** ou **Python** en fonction de votre préférence de langage.
-2. Cliquez avec le bouton droit de la souris sur le dossier **keyvault-client** et ouvrez un terminal intégré. Ensuite, installez les packages que vous devez utiliser Azure Key Vault et l’API Analyse de texte dans votre ressource de services cognitifs en exécutant la commande appropriée pour votre préférence de langue :
+2. Cliquez avec le bouton droit de la souris sur le dossier **keyvault-client** et ouvrez un terminal intégré. Ensuite, installez les packages dont vous aurez besoin pour utiliser Azure Key Vault et l'API d'analyse de texte dans votre ressource de services cognitifs en exécutant la commande appropriée à votre préférence linguistique:
 
     **C#**
 

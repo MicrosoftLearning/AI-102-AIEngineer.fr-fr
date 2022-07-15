@@ -13,7 +13,7 @@ ms.locfileid: "145195619"
 
 Vous pouvez intégrer le service Speech avec le service Language Understanding pour créer des applications qui peuvent déterminer intelligemment les intentions des utilisateurs à partir d’une entrée parlée.
 
-> **Remarque** : Cet exercice fonctionne mieux si vous avez un microphone. Certains environnements virtuels hébergés peuvent être en mesure de capturer l’audio à partir de votre microphone local, mais si cela ne fonctionne pas (ou si vous n’avez pas de microphone du tout), vous pouvez utiliser un fichier audio fourni pour l’entrée vocale. Suivez attentivement les instructions, car vous devez choisir différentes options selon que vous utilisez un microphone ou le fichier audio.
+> **Remarque** : cet exercice fonctionne mieux si vous avez un microphone.. Certains environnements virtuels hébergés peuvent être en mesure de capturer l’audio à partir de votre microphone local, mais si cela ne fonctionne pas (ou si vous n’avez pas de microphone du tout), vous pouvez utiliser un fichier audio fourni pour l’entrée vocale. Suivez attentivement les instructions, car vous devez choisir différentes options selon que vous utilisez un microphone ou le fichier audio.
 
 ## <a name="clone-the-repository-for-this-course"></a>Cloner le référentiel pour ce cours
 
@@ -32,7 +32,7 @@ Si vous avez déjà des ressources de création et de prédiction Language Unde
 
 1. Ouvrez le portail Azure à l’adresse `https://portal.azure.com` et connectez-vous avec le compte Microsoft associé à votre abonnement Azure.
 2. Sélectionnez le bouton **&#65291;Créer une ressource**, recherchez *Language Understanding*, puis créez une ressource **Language Understanding** avec les paramètres suivants :
-    - **Options de création** : Les deux
+    - **Options de création** : les deux
     - **Abonnement** : *votre abonnement Azure*
     - **Groupe de ressources** : *Choisissez ou créez un groupe de ressources. (Si vous utilisez un abonnement restreint, vous n’avez peut-être pas l’autorisation de créer un groupe de ressources. Dans ce cas, utilisez le groupe fourni.)*
     - **Nom** : *Entrez un nom unique.*
@@ -471,4 +471,4 @@ else:
 
 ## <a name="more-information"></a>Plus d’informations
 
-Pour en savoir plus sur l’intégration de Speech et de Language Understanding, consultez la [documentation Speech](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/intent-recognition).
+Pour en savoir plus sur l’intégration de Speech et de Language Understanding, consultez l'article [Vue d'ensemble du service Speech.](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/intent-recognition).

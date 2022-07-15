@@ -18,7 +18,7 @@ Dans cet exercice, vous allez utiliser le service Custom Vision pour effectuer l
 Si vous avez déjà cloné le référentiel de code **AI-102-AIEngineer** dans l’environnement dans lequel vous travaillez sur ce laboratoire, ouvrez-le dans Visual Studio Code ; sinon, procédez comme suit pour le cloner maintenant.
 
 1. Démarrez Visual Studio Code.
-2. Ouvrez la palette (Maj+CTRL+P) et exécutez une commande **Git : Cloner** pour cloner le référentiel `https://github.com/MicrosoftLearning/AI-102-AIEngineer` vers un dossier local (peu importe quel dossier).
+2. Ouvrez la palette (Maj+CTRL+P) et exécutez une commande **Git : Clone** pour cloner le référentiel `https://github.com/MicrosoftLearning/AI-102-AIEngineer` vers un dossier local (peu importe quel dossier).
 3. Une fois le référentiel cloné, ouvrez le dossier dans Visual Studio Code.
 4. Attendez que des fichiers supplémentaires soient installés pour prendre en charge les projets de code C# dans le référentiel.
 
@@ -32,9 +32,9 @@ Si vous disposez déjà de ressources de formation et de prédiction **Custom Vi
 2. Sélectionnez le bouton **&#65291;Créer une ressource**, recherchez *Custom Vision*, puis créez une ressource **Custom Vision** avec les paramètres suivants :
     - **Options de création** : Les deux
     - **Abonnement** : *votre abonnement Azure*
-    - **Groupe de ressources** : *Choisissez ou créez un groupe de ressources. (Si vous utilisez un abonnement restreint, vous n’avez peut-être pas l’autorisation de créer un groupe de ressources. Dans ce cas, utilisez le groupe fourni.)*
+    - **Groupe de ressources** : *choisissez ou créez un groupe de ressources. (Si vous utilisez un abonnement restreint, vous n’avez peut-être pas l’autorisation de créer un groupe de ressources. Dans ce cas, utilisez le groupe fourni.)*
     - **Région** : *choisissez n’importe quelle région disponible*
-    - **Nom** : *Entrez un nom unique.*
+    - **Nom** : *entrez un nom unique.*
     - **Niveau tarifaire de formation** : F0
     - **Niveau tarifaire de prédiction** : F0
 

@@ -13,7 +13,7 @@ ms.locfileid: "145757488"
 
 La reconnaissance optique de caractères (OCR) est un sous-ensemble de la vision par ordinateur qui traite de la lecture de texte dans des images et des documents. Le service **Vision par ordinateur** fournit deux API pour lire du texte, que vous allez explorer dans cet exercice.
 
-## <a name="clone-the-repository-for-this-course"></a>Cloner le référentiel pour ce cours
+## <a name="clone-the-repository-for-this-course"></a>Cloner le référentiel pour cette formation
 
 Si vous ne l’avez pas déjà fait, vous devez cloner le référentiel de code pour ce cours :
 
@@ -31,9 +31,9 @@ Si vous n’en avez pas encore dans votre abonnement, vous devez provisionner un
 1. Ouvrez le portail Azure à l’adresse `https://portal.azure.com` et connectez-vous avec le compte Microsoft associé à votre abonnement Azure.
 2. Sélectionnez le bouton **&#65291;Créer une ressource**, recherchez *Cognitive Services*, puis créez une ressource **Cognitive Services** avec les paramètres suivants :
     - **Abonnement** : *votre abonnement Azure*
-    - **Groupe de ressources** : *Choisissez ou créez un groupe de ressources. (Si vous utilisez un abonnement restreint, vous n’avez peut-être pas l’autorisation de créer un groupe de ressources. Dans ce cas, utilisez le groupe fourni.)*
+    - **Groupe de ressources** : *choisissez ou créez un groupe de ressources. (Si vous utilisez un abonnement restreint, vous n’avez peut-être pas l’autorisation de créer un groupe de ressources. Dans ce cas, utilisez le groupe fourni.)*
     - **Région** : *choisissez n’importe quelle région disponible*
-    - **Nom** : *Entrez un nom unique.*
+    - **Nom** : *entrez un nom unique.*
     - **Niveau tarifaire** : Standard S0
 3. Cochez les cases nécessaires et créez la ressource.
 4. Attendez la fin du déploiement, puis visualisez les détails du déploiement.
@@ -46,7 +46,7 @@ Dans cet exercice, vous allez effectuer une application cliente partiellement im
 > **Remarque** : Vous pouvez choisir d’utiliser le kit de développement logiciel (SDK) pour **C#** ou **Python**. Dans les étapes qui suivent, effectuez les actions appropriées pour votre langage préféré.
 
 1. Dans Visual Studio Code, dans le volet **Explorateur**, accédez au dossier **20-ocr** et développez le dossier **C-Sharp** ou **Python** en fonction de votre préférence de langage.
-2. Cliquez avec le bouton droit de la souris sur le dossier **read-text** et ouvrez un terminal intégré. Installez ensuite le package SDK de vision par ordinateur en exécutant la commande appropriée pour votre préférence de langage :
+2. Cliquez avec le bouton droit sur le dossier **create-search**, puis sélectionnez Ouvrir dans le terminal intégré. Installez ensuite le package SDK de vision par ordinateur en exécutant la commande appropriée pour votre préférence de langage :
 
 **C#**
 
@@ -112,7 +112,7 @@ cv_client = ComputerVisionClient(cog_endpoint, credential)
     
 ## <a name="use-the-ocr-api"></a>Utiliser l’API OCR
 
-L’API **OCR** est une API de reconnaissance optique de caractères optimisée pour la lecture de petites et moyennes quantités de texte imprimé dans images au format *.jpg*, *.png*, *.gif*,et *.bmp* Il prend en charge un large éventail de langues et en plus de lire du texte dans l’image, il peut déterminer l’orientation de chaque région de texte et retourner des informations sur l’angle de rotation du texte par rapport à l’image
+L’API **OCR** est une API de reconnaissance optique de caractères optimisée pour la lecture de petites et moyennesquantités de texte imprimé dans images au format *.jpg*, *.png*, *.gif*,et *.bmp*. Il prend en charge un large éventail de langues et en plus de lire du texte dans l’image, il peut déterminer l’orientation de chaque région de texte et retourner des informations sur l’angle de rotation du texte par rapport à l’image
 
 1. Dans le fichier de code de votre application, dans la fonction **Main** , examinez le code qui s’exécute si l’utilisateur sélectionne l’option de menu **1**. Ce code appelle la fonction **GetTextOcr**, en passant le chemin d’accès à un fichier image.
 2. Dans le dossier **read-text/images**, ouvrez **Lincoln.jpg** pour afficher l’image que votre code traitera.
@@ -218,7 +218,7 @@ L’API **Read** utilise un modèle de reconnaissance de texte plus récent que 
 L’API **Read** utilise un modèle d’opération asynchrone, dans lequel une demande de démarrage de la reconnaissance de texte est envoyée ; et l’ID d’opération renvoyé par la requête peut ensuite être utilisé pour vérifier la progression et récupérer les résultats.
 
 1. Dans le fichier de code de votre application, dans la fonction **Main**, examinez le code qui s’exécute si l’utilisateur sélectionne l’option de menu **2**. Ce code appelle la fonction **GetTextRead**, en passant le chemin d’accès à un fichier de document PDF.
-2. Dans le dossier **read-text/images**, cliquez avec le bouton droit de la sourits sur **Rome.pdf**, puis sélectionnez **Révéler dans Explorateur de fichiers**. Ensuite, dans Explorateur de fichiers, ouvrez le fichier PDF pour l’afficher.
+2. Dans le dossier **read-text/images**, cliquez avec le bouton droit sur **Rome.pdf**, puis sélectionnez **Révéler dans l'Explorateur de fichiers**. Ensuite, dans Explorateur de fichiers, ouvrez le fichier PDF pour l’afficher.
 3. De retour dans le fichier de code dans Visual Studio Code, recherchez la fonction **GetTextRead** et, sous le code existant qui imprime un message dans la console, ajoutez le code suivant :
 
 **C#**

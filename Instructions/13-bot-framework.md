@@ -117,7 +117,7 @@ Lorsque le bot démarre, notez que le point de terminaison sur lequel il est en 
 
     `http://localhost:3978/api/messages`
 
-3. Une fois la conversation ouverte dans un volet de **Conversation en direct**, attendez le message *Bonjour et bienvenue !* .
+3. Une fois la conversation ouverte dans un volet de **Conversation en direct**, attendez le message *Bonjour et bienvenue*.
 4. Entrez un message tel que *Bonjour* et affichez la réponse du bot, qui doit renvoyer le message que vous avez entré.
 5. Fermez le Bot Framework Emulator et revenez à Visual Studio Code, puis dans la fenêtre de terminal, entrez **Ctrl+C** pour arrêter le bot.
 
@@ -195,7 +195,7 @@ Lorsque le bot démarre, notez que le point de terminaison sur lequel il est en 
 
     `http://localhost:3978/api/messages`
 
-6. Une fois la conversation ouverte dans un volet de **Conversation en direct**, attendez le message *Bonjour et bienvenue !* .
+6. Une fois la conversation ouverte dans un volet de **Conversation en direct**, attendez le message *Bonjour et bienvenue*.
 7. Entrez un message tel que *Bonjour* et affichez la réponse du bot, qui doit me demander *Quelle heure est-il*.
 8. Entrez *Quelle heure est-il ?* et affichez la réponse.
 
@@ -205,4 +205,4 @@ Lorsque le bot démarre, notez que le point de terminaison sur lequel il est en 
 
 ## <a name="more-information"></a>Plus d’informations
 
-Pour en savoir plus sur Bot Framework, consultez la [documentation de Bot Framework](https://docs.microsoft.com/azure/bot-service/index-bf-sdk).
+Pour en savoir plus sur Bot Framework, consultez l'article [Documentation du kit SDK Bot Framework](https://docs.microsoft.com/azure/bot-service/index-bf-sdk).

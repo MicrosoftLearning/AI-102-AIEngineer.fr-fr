@@ -33,7 +33,7 @@ Vous allez utiliser Bot Framework Composer pour créer votre bot. Cet outil est 
 
 1. Démarrez **Bot Framework Composer** et, si vous n’êtes pas automatiquement invité à installer une mise à jour, utilisez l’option **Rechercher les mises à jour** dans le menu **Aide** pour rechercher les mises à jour.
 2. Si une mise à jour est disponible, choisissez de procéder à l’installation de la mise à jour après la fermeture de l’application. Fermez ensuite Bot Framework Composer et installez la mise à jour pour l’utilisateur actuellement connecté. Redémarrez Bot Framework Composer une fois l’installation terminée. L’installation peut prendre quelques minutes.
-3. Vérifiez que la version de Bot Framework Composer est au moins **2.0.0**.
+3. Vérifiez que la version de Bot Framework Composer est **2.0.0**.ou une version ultérieure.
 
 ## <a name="create-a-bot"></a>Créer un bot
 
@@ -44,7 +44,7 @@ Vous êtes maintenant prêt à utiliser Bot Framework Composer pour créer un bo
 1. Démarrez Bot Framework Composer s’il n’est pas déjà ouvert.
 2. Dans l’écran **Accueil**, sélectionnez **Nouveau**. Créez un bot vide, nommez-le **BotMétéo** et enregistrez-le dans un dossier local.
 3. Fermez le volet **Démarrage** s’il est ouvert, puis, dans le volet de navigation de gauche, sélectionnez **Salutations** pour ouvrir le canevas de création et voir l’activité *ConversationUpdate*. Celle-ci est appelée quand un utilisateur rejoint initialement une conversation avec le bot. L’activité se compose d’un flux d’actions.
-4. Dans le volet de propriétés à droite, sélectionnez le titre **Salutations** en haut pour le modifier. Remplacez-le par **AccueilUtilisateurs**.
+4. Dans le volet de propriétés à droite, sélectionnez le titre **Salutations** en haut pour le modifier. Remplacez-le par **Accueil Utilisateurs**.
 5. Dans le canevas de création, sélectionnez l’action **Envoyer une réponse**. Ensuite, dans le volet des propriétés, modifiez le texte par défaut de *Bonjour votre bot*  en `Hi! I'm WeatherBot.`
 6. Dans le canevas de création, sélectionnez le symbole final **+** (juste au-dessus du cercle qui marque la <u>fin</u> du flux de dialogue), puis ajoutez une nouvelle action **Poser une question** avec une réponse **Texte**.
 
