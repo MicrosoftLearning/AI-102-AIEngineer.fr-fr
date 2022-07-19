@@ -11,9 +11,9 @@ ms.locfileid: "145195559"
 ---
 # <a name="translate-text"></a>Traduire du texte
 
-Le service **Traducteur** est un service cognitif qui vous permet de traduire du texte d’une langue vers une autre.
+Le service **Translator** est un service cognitif qui vous permet de traduire du texte d’une langue vers une autre.
 
-Par exemple, supposons qu’une agence de voyages souhaite examiner les avis sur les hôtels qui ont été soumis au site web de l’entreprise, en standardisant l’anglais comme langue utilisée pour l’analyse. En utilisant le service Traducteur, elle peut déterminer la langue dans laquelle chaque avis est écrit et, si un avis n’est pas déjà en anglais, le traduire à partir de la langue source dans laquelle il a été écrit vers l’anglais.
+Par exemple, supposons qu’une agence de voyages souhaite examiner les avis sur les hôtels qui ont été soumis au site web de l’entreprise, en standardisant l’anglais comme langue utilisée pour l’analyse. En utilisant le service Translator,elle peut déterminer la langue dans laquelle chaque avis est écrit et, si un avis n’est pas déjà en anglais, le traduire àpartir de la langue source dans laquelle il a été écrit vers l’anglais.
 
 ## <a name="clone-the-repository-for-this-course"></a>Cloner le référentiel pour ce cours
 
@@ -41,7 +41,7 @@ Si vous n’en avez pas encore dans votre abonnement, vous devez provisionner un
 4. Attendez la fin du déploiement, puis visualisez les détails du déploiement.
 5. Une fois la ressource déployée, accédez-y et affichez sa page **Clés et point de terminaison**. Vous aurez besoin de l’une des clés et de l’emplacement dans lequel le service est approvisionné à partir de cette page dans la procédure suivante.
 
-## <a name="prepare-to-use-the-translator-service"></a>Préparer l’utilisation du service Traducteur
+## <a name="prepare-to-use-the-translator-service"></a>Préparer l’utilisation du service Translator
 
 Dans cet exercice, vous allez effectuer une application cliente partiellement implémentée qui utilise l’API REST Traducteur pour traduire les avis sur un hôtel.
 
@@ -75,11 +75,11 @@ Dans cet exercice, vous allez effectuer une application cliente partiellement im
     python text-translation.py
     ```
 
-6. Observez la sortie comme le code doit s’exécuter sans erreur, affichant le contenu de chaque fichier texte d’avis dans le dossier **avis**. Actuellement, l’application n’utilise pas le service Traducteur. Nous corrigerons cela dans la procédure suivante.
+6. Observez la sortie comme le code doit s’exécuter sans erreur, affichant le contenu de chaque fichier texte d’avis dans le dossier **avis**. Actuellement, l’application n’utilise pas le service Translator. Nous corrigerons cela dans la procédure suivante.
 
 ## <a name="detect-language"></a>Détecter la langue
 
-Le service Traducteur peut détecter automatiquement la langue source du texte à traduire, mais vous permet également de détecter explicitement la langue dans laquelle le texte est écrit.
+Le service Translator peut détecter automatiquement la langue source du texte à traduire, mais vous permetégalement de détecter explicitement la langue dans laquelle le texte est écrit.
 
 1. Dans votre fichier de code, recherchez la fonction **GetLanguage**, qui retourne actuellement « en » pour toutes les valeurs de texte.
 2. Dans la fonction **GetLanguage**, sous le commentaire **Utiliser la fonction de détection Traducteur**, ajoutez le code suivant pour utiliser l’API REST de Traducteur pour détecter la langue du texte spécifié, en étant prudent de ne pas remplacer le code à la fin de la fonction qui retourne la langue :
@@ -162,7 +162,7 @@ language = response[0]["language"]
 
 ## <a name="translate-text"></a>Traduire le texte
 
-Maintenant que votre application peut déterminer la langue dans laquelle les avis sont écrits, vous pouvez utiliser le service Traducteur pour traduire les avis dans une langue autre que l’anglais vers l’anglais.
+Maintenant que votre application peut déterminer la langue dans laquelle les avis sont écrits, vous pouvez utiliser le service Translator pour traduire les avis dans une langue autre que l’anglais vers l’anglais.
 
 1. Dans votre fichier de code, recherchez la fonction **Translate**, qui retourne et vide la chaîne pour toutes les valeurs de texte.
 2. Dans la fonction **Translate**, sous le commentaire **Utiliser la fonction de traduction Traducteur**, ajoutez le code suivant pour utiliser l’API REST de Traducteur pour traduire le texte spécifié de sa langue source vers l’anglais, en étant prudent de ne pas remplacer le code à la fin de la fonction qui retourne la traduction :
@@ -243,8 +243,8 @@ translation = response[0]["translations"][0]["text"]
     python text-translation.py
     ```
 
-4. Observez la sortie et notez que les avis dans une langue autre que l’anglais sont traduits en anglais.
+4. Observez le résultat et notez que les avis dans une langue autre que l’anglais sont traduits en anglais.
 
 ## <a name="more-information"></a>Plus d’informations
 
-Pour plus d’informations sur l’utilisation du service **Traducteur**, consultez la [documentation du service Traducteur](https://docs.microsoft.com/azure/cognitive-services/translator/).
+Pour plus d’informations sur l’utilisation du service **Translator**, consultez la [documentation d’Azure Cognitive Services Translator](https://docs.microsoft.com/azure/cognitive-services/translator/).

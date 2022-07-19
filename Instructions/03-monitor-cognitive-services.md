@@ -13,7 +13,7 @@ ms.locfileid: "145195553"
 
 Azure Cognitive Services peut s’avérer être un élément essentiel d’une infrastructure d’application globale. Il est important de pouvoir surveiller l’activité et d’obtenir des alertes concernant les problèmes qui nécessitent votre attention.
 
-## <a name="clone-the-repository-for-this-course"></a>Cloner le référentiel pour ce cours
+## <a name="clone-the-repository-for-this-course"></a>Cloner le référentiel pour cette formation
 
 Si vous avez déjà cloné le référentiel de code **AI-102-AIEngineer** dans l’environnement dans lequel vous travaillez sur ce laboratoire, ouvrez-le dans Visual Studio Code ; sinon, procédez comme suit pour le cloner maintenant.
 
@@ -31,10 +31,10 @@ Si vous n’en avez pas encore dans votre abonnement, vous devez provisionner un
 1. Ouvrez le portail Azure à l’adresse `https://portal.azure.com` et connectez-vous avec le compte Microsoft associé à votre abonnement Azure.
 2. Sélectionnez le bouton **&#65291;Créer une ressource**, recherchez *Cognitive Services*, puis créez une ressource **Cognitive Services** avec les paramètres suivants :
     - **Abonnement** : *votre abonnement Azure*
-    - **Groupe de ressources** : *Choisissez ou créez un groupe de ressources. (Si vous utilisez un abonnement restreint, vous n’avez peut-être pas l’autorisation de créer un groupe de ressources. Dans ce cas, utilisez le groupe fourni.)*
+    - **Groupe de ressources** : *choisissez ou créez un groupe de ressources. (Si vous utilisez un abonnement restreint, vous n’avez peut-être pas l’autorisation de créer un groupe de ressources. Dans ce cas, utilisez le groupe fourni.)*
     - **Région** : *choisissez n’importe quelle région disponible*
-    - **Nom** : *Entrez un nom unique.*
-    - **Niveau tarifaire** : Standard S0
+    - **Nom** : *entrez un nom unique.*
+    - **Niveau tarifaire** : standard S0
 3. Cochez les cases nécessaires et créez la ressource.
 4. Attendez la fin du déploiement, puis visualisez les détails du déploiement.
 5. Une fois la ressource déployée, accédez-y et affichez sa page **Clés et point de terminaison**. Notez l’URI de point de terminaison. Vous en aurez besoin ultérieurement.
@@ -110,4 +110,4 @@ La commande retourne un document JSON contenant des informations sur la langue d
 
 ## <a name="more-information"></a>Plus d’informations
 
-L’une des options de surveillance de Cognitive Services consiste à utiliser la *journalisation des diagnostics*. Une fois activée, la journalisation des diagnostics capture des informations enrichies sur l’utilisation de votre ressource Cognitive Services et peut constituer un outil de supervision et de débogage utile. La génération d’informations peut prendre plus d’une heure après la configuration de la journalisation des diagnostics. C’est pourquoi nous n’avons pas exploré cet aspect dans cet exercice; mais vous pouvez en savoir plus dans la [documentation Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/diagnostic-logging).
+L’une des options de surveillance de Cognitive Services consiste à utiliser la *journalisation des diagnostics*. Une fois activée, la journalisation des diagnostics capture des informations enrichies sur l’utilisation de votre ressource Cognitive Services et peut constituer un outil de supervision et de débogage utile. La génération d’informations peut prendre plus d’une heure après la configuration de la journalisation des diagnostics. C’est pourquoi nous n’avons pas exploré cet aspect dans cet exercice ; mais vous pouvez en savoir plus dans la [documentation Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/diagnostic-logging).

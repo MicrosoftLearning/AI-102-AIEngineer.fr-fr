@@ -117,7 +117,7 @@ Vous allez maintenant entraîner un modèle à l’aide des fichiers **.jpg** et
     *Les fichiers d'information sur les champs ont été fournis pour vous dans cet exercice. Pour vos propres projets, vous pouvez créer ces fichiers à l'aide de [Form Recognizer Studio](https://formrecognizer.appliedai.azure.com/studio). Lorsque vous utilisez l'outil, vos fichiers d'information de champ sont automatiquement créés et stockés dans votre compte de stockage connecté.*
 
 4. Dans Visual Studio Code, dans le dossier **de 21-custom-form**, développez le dossier **C-Sharp** ou **Python** en fonction de votre préférence de langage.
-5. Cliquez avec le bouton droit sur le dossier **train-model** puis sélectionnez Ouvrir dans le terminal intégré.
+5. Cliquez avec le bouton droit sur le dossier **create-search,** puis sélectionnez Ouvrir dans le terminal intégré.
 
 6. Installez le package Form Recognizer en exécutant la commande appropriée pour votre préférence de langage :
 

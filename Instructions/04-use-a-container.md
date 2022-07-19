@@ -13,14 +13,14 @@ ms.locfileid: "145195560"
 
 L’utilisation de services Cognitive Services hébergés dans Azure permet aux développeurs d’applications de se concentrer sur l’infrastructure de leur propre code tout en tirant parti des services évolutifs gérés par Microsoft. Toutefois, dans de nombreux scénarios, les organisations nécessitent davantage de contrôle sur leur infrastructure de service et les données transmises entre les services.
 
-La plupart des API Cognitive Services peuvent être empaquetées et déployées dans un *conteneur*, ce qui permet aux organisations d’héberger Cognitive Services dans leur propre infrastructure; par exemple, dans des serveurs Docker locaux, des Azure Container Instances ou des clusters Azure Kubernetes Services. Les services Cognitive Services en conteneur doivent communiquer avec un compte Cognitive Services basé sur Azure pour prendre en charge la facturation ; mais les données d’application ne sont pas transmises au service principal, et les organisations ont un meilleur contrôle sur la configuration de déploiement de leurs conteneurs, ce qui permet des solutions personnalisées pour l’authentification, l’extensibilité et d’autres considérations.
+La plupart des API Cognitive Services peuvent être empaquetées et déployées dans un *conteneur*, ce qui permet aux organisations d’héberger Cognitive Services dans leur propre infrastructure ; par exemple, dans des serveurs Docker locaux, des Azure Container Instances ou des clusters Azure Kubernetes Services. Les services Cognitive Services en conteneur doivent communiquer avec un compte Cognitive Services basé sur Azure pour prendre en charge la facturation ; mais les données d’application ne sont pas transmises au service principal, et les organisations ont un meilleur contrôle sur la configuration de déploiement de leurs conteneurs, ce qui permet des solutions personnalisées pour l’authentification, l’extensibilité et d’autres considérations.
 
-## <a name="clone-the-repository-for-this-course"></a>Cloner le référentiel pour ce cours
+## <a name="clone-the-repository-for-this-course"></a>Cloner le référentiel pour cette formation
 
 Si vous avez déjà cloné le référentiel de code **AI-102-AIEngineer** dans l’environnement dans lequel vous travaillez sur ce laboratoire, ouvrez-le dans Visual Studio Code ; sinon, procédez comme suit pour le cloner maintenant.
 
 1. Démarrez Visual Studio Code.
-2. Ouvrez la palette (Maj+CTRL+P) et exécutez une commande **Git : Cloner** pour cloner le référentiel `https://github.com/MicrosoftLearning/AI-102-AIEngineer` vers un dossier local (peu importe quel dossier).
+2. Ouvrez la palette (Maj+CTRL+P) et exécutez une commande **Git: Clone** pour cloner le référentiel `https://github.com/MicrosoftLearning/AI-102-AIEngineer` vers un dossier local (peu importe quel dossier).
 3. Une fois le référentiel cloné, ouvrez le dossier dans Visual Studio Code.
 4. Attendez que des fichiers supplémentaires soient installés pour prendre en charge les projets de code C# dans le référentiel.
 

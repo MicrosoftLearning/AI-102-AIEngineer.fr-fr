@@ -15,12 +15,12 @@ Le service **Langue** est un service cognitif qui prend en charge l’analyse du
 
 Par exemple, supposons qu’une agence de voyages souhaite traiter les avis d’hôtel soumis au site web de l’entreprise. En utilisant le service Langue, ils peuvent déterminer la langue dans laquelle chaque révision est écrite, le sentiment (positif, neutre ou négatif) des avis, les expressions clés qui peuvent indiquer les principaux sujets abordés dans l’avis et les entités nommées, telles que les lieux, les repères ou les personnes mentionnées dans les avis.
 
-## <a name="clone-the-repository-for-this-course"></a>Cloner le référentiel pour ce cours
+## <a name="clone-the-repository-for-this-course"></a>Cloner le référentiel pour cette formation
 
 Si vous n’avez pas déjà cloné le référentiel de code **AI-102-AIEngineer** dans l’environnement où vous travaillez sur ce laboratoire, procédez comme suit. Sinon, ouvrez le dossier cloné dans Visual Studio Code.
 
 1. Démarrez Visual Studio Code.
-2. Ouvrez la palette (Maj+CTRL+P) et exécutez une commande **Git : Cloner** pour cloner le référentiel `https://github.com/MicrosoftLearning/AI-102-AIEngineer` vers un dossier local (peu importe quel dossier).
+2. Ouvrez la palette (Maj+CTRL+P) et exécutez une commande **Git: Clone** pour cloner le référentiel `https://github.com/MicrosoftLearning/AI-102-AIEngineer` vers un dossier local (peu importe quel dossier).
 3. Lorsque le référentiel a été cloné, ouvrez le dossier dans Visual Studio Code.
 4. Attendez que des fichiers supplémentaires soient installés pour prendre en charge les projets de code C# dans le référentiel.
 
@@ -33,10 +33,10 @@ Si vous n’en avez pas encore dans votre abonnement, vous devez provisionner un
 1. Ouvrez le portail Azure à l’adresse `https://portal.azure.com` et connectez-vous avec le compte Microsoft associé à votre abonnement Azure.
 2. Sélectionnez le bouton **&#65291;Créer une ressource**, recherchez *Cognitive Services*, puis créez une ressource **Cognitive Services** avec les paramètres suivants :
     - **Abonnement** : *votre abonnement Azure*
-    - **Groupe de ressources** : *Choisissez ou créez un groupe de ressources. (Si vous utilisez un abonnement restreint, vous n’avez peut-être pas l’autorisation de créer un groupe de ressources. Dans ce cas, utilisez le groupe fourni.)*
+    - **Groupe de ressources** : *choisissez ou créez un groupe de ressources. (Si vous utilisez un abonnement restreint, vous n’avez peut-être pas l’autorisation de créer un groupe de ressources. Dans ce cas, utilisez le groupe fourni.)*
     - **Région** : *choisissez n’importe quelle région disponible*
-    - **Nom** : *Entrez un nom unique.*
-    - **Niveau tarifaire** : Standard S0
+    - **Nom** : *entrez un nom unique.*
+    - **Niveau tarifaire** : standard S0
 3. Cochez les cases nécessaires et créez la ressource.
 4. Attendez la fin du déploiement, puis visualisez les détails du déploiement.
 5. Une fois la ressource déployée, accédez-y et affichez sa page **Clés et point de terminaison**. Vous aurez besoin du point de terminaison et de l’une des clés de cette page dans la procédure suivante.
@@ -48,7 +48,7 @@ Dans cet exercice, vous allez effectuer une application cliente partiellement im
 > **Remarque** : Vous pouvez choisir d’utiliser le kit de développement logiciel (SDK) pour **C#** ou **Python**. Dans les étapes qui suivent, effectuez les actions appropriées pour votre langage préféré.
 
 1. Dans Visual Studio Code, dans le volet **Explorateur**, accédez au dossier **05-analyze-text** et développez le dossier **C-Sharp** ou **Python** en fonction de votre préférence de langage.
-2. Cliquez avec le bouton droit de la souris sur le dossier **text-analysis** et ouvrez un terminal intégré. Installez ensuite le package SDK d’analyse de texte en exécutant la commande appropriée pour votre préférence de langage :
+2. Cliquez avec le bouton droit sur le dossier **text-analysis** et ouvrez un terminal intégré. Installez ensuite le package SDK d’analyse de texte en exécutant la commande appropriée pour votre préférence de langage :
     
     **C#**
     
@@ -124,7 +124,7 @@ Dans cet exercice, vous allez effectuer une application cliente partiellement im
     python text-analysis.py
     ```
 
-6. Observez la sortie comme le code doit s’exécuter sans erreur, affichant le contenu de chaque fichier texte d’avis dans le dossier **avis**. L’application crée correctement un client pour l’API Analyse de texte, mais ne l’utilise pas. Nous le corrigerons dans la procédure suivante.
+6. Observez le résultat pour vérifier si le code s'exécute sans erreur, en affichant le contenu de chaque fichier texte d'avis dans le dossier **Avis**. L’application crée correctement un client pour l’API Analyse de texte, mais ne l’utilise pas. Nous le corrigerons dans la procédure suivante.
 
 ## <a name="detect-language"></a>Détecter la langue
 
@@ -168,7 +168,7 @@ Maintenant que vous avez créé un client pour l’API Analyse de texte, nous al
 
 ## <a name="evaluate-sentiment"></a>Évaluer les sentiments
 
-*L’analyse des sentiments* est une technique couramment utilisée pour classer le texte comme *positif* ou *négatif* (ou *neutre* ou *mixte* possibles). Elle est couramment utilisée pour analyser les publications de médias sociaux, les avis sur des produits et d’autres éléments où le sentiment du texte peut fournir des informations utiles.
+*L’analyse des sentiments* est une technique couramment utilisée pour classer le texte comme *positif* ou *négatif* (ou *éventuellement neutre* ou *mixte*). Elle est couramment utilisée pour analyser les publications de médias sociaux, les avis sur des produits et d’autres éléments où le sentiment du texte peut fournir des informations utiles.
 
 1. Dans la fonction **Main** de votre programme, recherchez le commentaire **Obtenir le sentiment**. Ensuite, sous ce commentaire, ajoutez le code nécessaire pour détecter le sentiment dans chaque document d’avis :
 
@@ -202,7 +202,7 @@ Maintenant que vous avez créé un client pour l’API Analyse de texte, nous al
     python text-analysis.py
     ```
 
-3. Observez la sortie, notant que le sentiment des avis est détecté.
+3. Observez le résultat pour vérifier la détection d'un sentiment dans les avis.
 
 ## <a name="identify-key-phrases"></a>Identifier les expressions clés
 
@@ -350,4 +350,4 @@ Outre les entités classées, l’API d’analyse de texte peut détecter les en
 
 ## <a name="more-information"></a>Plus d’informations
 
-Pour plus d’informations sur l’utilisation du service **Langue**, consultez la [documentation d’analyse de texte](https://docs.microsoft.com/azure/cognitive-services/language-service/).
+Pour plus d’informations sur l’utilisation du service **Langue**, consultez la [documentation relative à l'analyse de texte](https://docs.microsoft.com/azure/cognitive-services/language-service/).

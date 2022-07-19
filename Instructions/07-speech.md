@@ -18,9 +18,9 @@ Le service **Speech** est un service cognitif Azure qui fournit des fonctionnali
 
 Dans cet exercice, vous allez utiliser ces deux API pour implémenter une application d’horloge parlante.
 
-**Remarque** : Cet exercice nécessite que vous utilisiez un ordinateur avec des haut-parleurs ou des écouteurs. Pour une expérience optimale, un microphone est également nécessaire. Certains environnements virtuels hébergés peuvent être en mesure de capturer l’audio à partir de votre microphone local, mais si cela ne fonctionne pas (ou si vous n’avez pas de microphone du tout), vous pouvez utiliser un fichier audio fourni pour l’entrée vocale. Suivez attentivement les instructions, car vous devez choisir différentes options selon que vous utilisez un microphone ou le fichier audio.
+**Remarque** : cet exercice nécessite que vous utilisiez un ordinateur avec des haut-parleurs ou des écouteurs. Pour une expérience optimale, un microphone est également nécessaire. Certains environnements virtuels hébergés peuvent être en mesure de capturer l’audio à partir de votre microphone local, mais si cela ne fonctionne pas (ou si vous n’avez pas de microphone du tout), vous pouvez utiliser un fichier audio fourni pour l’entrée vocale. Suivez attentivement les instructions, car vous devez choisir différentes options selon que vous utilisez un microphone ou le fichier audio.
 
-## <a name="clone-the-repository-for-this-course"></a>Cloner le référentiel pour ce cours
+## <a name="clone-the-repository-for-this-course"></a>Cloner le référentiel pour cette formation
 
 Si vous n’avez pas déjà cloné le référentiel de code **AI-102-AIEngineer** dans l’environnement où vous travaillez sur ce laboratoire, procédez comme suit. Sinon, ouvrez le dossier cloné dans Visual Studio Code.
 
@@ -29,7 +29,7 @@ Si vous n’avez pas déjà cloné le référentiel de code **AI-102-AIEngineer*
 3. Une fois le référentiel cloné, ouvrez le dossier dans Visual Studio Code.
 4. Attendez que des fichiers supplémentaires soient installés pour prendre en charge les projets de code C# dans le référentiel.
 
-    **Remarque** : Si vous êtes invité à ajouter des ressources requises pour générer et déboguer, sélectionnez **Not Now** (Pas maintenant).
+    **Remarque** : si vous êtes invité à ajouter des ressources requises pour générer et déboguer, sélectionnez **Not Now** (Pas maintenant).
 
 ## <a name="provision-a-cognitive-services-resource"></a>Approvisionner une ressource Cognitive Services
 
@@ -50,7 +50,7 @@ Si vous n’en avez pas encore dans votre abonnement, vous devez provisionner un
 
 Dans cet exercice, vous allez effectuer une application cliente partiellement implémentée qui utilise le kit de développement logiciel (SDK) Speech pour reconnaître et synthétiser du contenu vocal.
 
-**Remarque** : Vous pouvez choisir d’utiliser le kit de développement logiciel (SDK) pour **C#** ou **Python**. Dans les étapes qui suivent, effectuez les actions appropriées pour votre langage préféré.
+**Remarque** : vous pouvez choisir d’utiliser le kit de développement logiciel (SDK) pour **C#** ou **Python**. Dans les étapes qui suivent, effectuez les actions appropriées pour votre langage préféré.
 
 1. Dans Visual Studio Code, dans le volet **Explorateur**, accédez au dossier **07-speech** et développez le dossier **C-Sharp** ou **Python** en fonction de votre préférence de langage.
 2. Cliquez avec le bouton droit de la souris sur le dossier **speaking-clock** et ouvrez un terminal intégré. Installez ensuite le package SDK Speech en exécutant la commande appropriée pour votre préférence de langage :
@@ -298,7 +298,7 @@ Votre application d’horloge parlante accepte l’entrée parlée, mais elle ne
     speech_synthesizer = speech_sdk.SpeechSynthesizer(speech_config)
     ```
     
-    > **Remarque** : *La configuration audio par défaut utilise l’appareil audio système par défaut pour la sortie. Vous n’avez donc pas besoin de fournir explicitement une **AudioConfig**. Si vous devez rediriger la sortie audio vers un fichier, vous pouvez utiliser une **AudioConfig** avec un FilePath.*
+    > **Remarque** : *la configuration audio par défaut utilise l’appareil audio système par défaut pour la sortie. Vous n’avez donc pas besoin de fournir explicitement une **AudioConfig**. Si vous devez rediriger la sortie audio vers un fichier, vous pouvez utiliser une **AudioConfig** avec un FilePath.*
 
 3. Dans la fonction **TellTime**, sous le commentaire **Synthétiser la sortie parlée**, ajoutez le code suivant pour générer la sortie parlée, en étant prudent de ne pas remplacer le code à la fin de la fonction qui imprime la réponse :
 
@@ -342,7 +342,7 @@ Votre application d’horloge parlante accepte l’entrée parlée, mais elle ne
 
 Votre application d’horloge parlante utilise une voix par défaut, que vous pouvez modifier. Le service Speech prend en charge une gamme de voix *standard* ainsi que des voix *neuronales* quasi humaines. Vous pouvez également créer des voix *personnalisées*.
 
-> **Remarque** : Pour accéder à la liste des voix standard et neuronales, consultez l'article [Prise en charge des langues et de la voix](https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support#text-to-speech) pour le service Speech.
+> **Remarque** : pour accéder à la liste des voix standard et neuronales, consultez l'article [Prise en charge des langues et de la voix](https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support#text-to-speech) pour le service Speech.
 
 1. Dans la fonction **TellTime**, sous le commentaire **Configurer la synthèse vocale**, modifiez le code comme suit pour spécifier une autre voix avant de créer le client **SpeechSynthesizer** :
 

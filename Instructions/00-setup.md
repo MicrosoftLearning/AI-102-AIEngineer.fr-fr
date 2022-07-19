@@ -13,7 +13,7 @@ ms.locfileid: "145195607"
 
 Ces exercices sont conçus pour être effectués dans un environnement de labo hébergé. Si vous souhaitez les terminer sur votre propre ordinateur, vous pouvez le faire en installant le logiciel suivant. Vous pouvez rencontrer des dialogues et un comportement inattendus lors de l’utilisation de votre propre environnement. En raison de la large gamme de configurations locales possibles, l’équipe de formation ne peut pas prendre en charge les problèmes que vous pouvez rencontrer dans votre propre environnement.
 
-> **Remarque** : les instructions ci-dessous s’appliquent aux ordinateurs Windows 10. Vous pouvez également utiliser Linux ou MacOS. Vous devrez peut-être adapter les instructions du labo pour votre système d’exploitation choisi.
+> **Remarque** : les instructions ci-dessous s’appliquent aux ordinateurs Windows 10. Vous pouvez également utiliserLinux ou MacOS. Vous devrez peut-être adapter les instructions du labo pour votre système d’exploitation choisi.
 
 ### <a name="base-operating-system-windows-10"></a>Système d'exploitation de base (Windows 10)
 
