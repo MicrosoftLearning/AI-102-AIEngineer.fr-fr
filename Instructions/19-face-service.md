@@ -2,12 +2,12 @@
 lab:
   title: Détecter et analyser les visages
   module: Module 10 - Detecting, Analyzing, and Recognizing Faces
-ms.openlocfilehash: ac73112414f9e0e4f944029dbfb1f5df0f204f28
-ms.sourcegitcommit: f19509304dff38600d6431f4873e0d580fb51425
+ms.openlocfilehash: 4f7f366d7f2fb221d4fcb89fdb3a4b21c88b915f
+ms.sourcegitcommit: 3de3c160e5b2eae51308cacbd0bcd3dbdbe337a5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/14/2022
-ms.locfileid: "147124831"
+ms.lasthandoff: 07/19/2022
+ms.locfileid: "147375789"
 ---
 # <a name="detect-and-analyze-faces"></a>Détecter et analyser les visages
 
@@ -24,7 +24,7 @@ Si vous ne l’avez pas déjà fait, vous devez cloner le référentiel de code 
 3. Une fois le référentiel cloné, ouvrez le dossier dans Visual Studio Code.
 4. Attendez que des fichiers supplémentaires soient installés pour prendre en charge les projets de code C# dans le référentiel.
 
-    > **Remarque** : Si vous êtes invité à ajouter des ressources requises pour générer et déboguer, sélectionnez **Not Now** (Pas maintenant).
+    > **Remarque** : si vous êtes invité à ajouter des ressources requises pour générer et déboguer, sélectionnez **Not Now** (Pas maintenant).
 
 ## <a name="provision-a-cognitive-services-resource"></a>Approvisionner une ressource Cognitive Services
 
@@ -66,7 +66,7 @@ Dans cet exercice, vous allez effectuer une application cliente partiellement im
     - **C#** : appsettings.json
     - **Python** : .env
 
-4. Ouvrez le fichier de configuration et mettez à jour les valeurs de configuration qu’il contient pour refléter le **point de terminaison** et une **clé** d’authentification de votre ressource Cognitive Services. Enregistrez vos modifications.
+4. Ouvrez le fichier de configuration et mettez à jour les valeurs de configuration qu’il contient pour refléter le **point de terminaison** et une **clé** d’authentification de votre ressource services cognitifs. Enregistrez vos modifications.
 
 5. Notez que le dossier **computer-vision** contient un fichier de code pour l’application cliente :
 
@@ -260,7 +260,7 @@ Bien que le service **Vision par ordinateur** offre une détection des visages d
     - **C#** : appsettings.json
     - **Python** : .env
 
-4. Ouvrez le fichier de configuration et mettez à jour les valeurs de configuration qu’il contient pour refléter le **point de terminaison** et une **clé** d’authentification de votre ressource Cognitive Services. Enregistrez vos modifications.
+4. Ouvrez le fichier de configuration et mettez à jour les valeurs de configuration qu’il contient pour refléter le **point de terminaison** et une **clé** d’authentification de votre ressource services cognitifs. Enregistrez vos modifications.
 
 5. Notez que le dossier **face-api** contient un fichier de code pour l’application cliente :
 
@@ -345,7 +345,7 @@ L’une des fonctionnalités les plus fondamentales du service Visage consiste �
 // Get faces
 using (var imageData = File.OpenRead(imageFile))
 {    
-    var detected_faces = await faceClient.Face.DetectWithStreamAsync(imageData, returnFaceAttributes: features);
+    var detected_faces = await faceClient.Face.DetectWithStreamAsync(imageData, returnFaceAttributes: features, returnFaceId: false);
 
     if (detected_faces.Count > 0)
     {
@@ -357,12 +357,15 @@ using (var imageData = File.OpenRead(imageFile))
         Pen pen = new Pen(Color.LightGreen, 3);
         Font font = new Font("Arial", 4);
         SolidBrush brush = new SolidBrush(Color.Black);
+        int faceCount=0;
 
         // Draw and annotate each face
         foreach (var face in detected_faces)
         {
+            faceCount++;
+            Console.WriteLine($"\nFace number {faceCount}");
+            
             // Get face properties
-            Console.WriteLine($"\nFace ID: {face.FaceId}");
             Console.WriteLine($" - Mouth Occluded: {face.FaceAttributes.Occlusion.MouthOccluded}");
             Console.WriteLine($" - Eye Occluded: {face.FaceAttributes.Occlusion.EyeOccluded}");
             Console.WriteLine($" - Blur: {face.FaceAttributes.Blur.BlurLevel}");
@@ -390,7 +393,7 @@ using (var imageData = File.OpenRead(imageFile))
 # Get faces
 with open(image_file, mode="rb") as image_data:
     detected_faces = face_client.face.detect_with_stream(image=image_data,
-                                                            return_face_attributes=features)
+                                                            return_face_attributes=features,                     return_face_id=False)
 
     if len(detected_faces) > 0:
         print(len(detected_faces), 'faces detected.')
@@ -401,12 +404,15 @@ with open(image_file, mode="rb") as image_data:
         image = Image.open(image_file)
         draw = ImageDraw.Draw(image)
         color = 'lightgreen'
+        face_count = 0
 
         # Draw and annotate each face
         for face in detected_faces:
 
             # Get face properties
-            print('\nFace ID: {}'.format(face.face_id))
+            face_count += 1
+            print('\nFace number {}'.format(face_count))
+
             detected_attributes = face.face_attributes.as_dict()
             if 'blur' in detected_attributes:
                 print(' - Blur:')
