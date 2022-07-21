@@ -443,7 +443,7 @@ with open(image_file, mode="rb") as image_data:
         print('\nResults saved in', outputfile)
 ```
 
-4. Examinez le code que vous avez ajouté à la fonction **DetectFaces**. Il analyse un fichier image et détecte les visages qu’il contient, y compris les attributs tels que l’âge, les émotions et la présence de lunettes. Les détails de chaque visage sont affichés, notamment un identificateur de visage unique affecté à chaque visage; et l’emplacement des visages est indiqué sur l’image à l’aide de rectangles englobants.
+4. Examinez le code que vous avez ajouté à la fonction **DetectFaces**. Il analyse un fichier image et détecte les visages qu’il contient, y compris les attributs tels que l’âge, les émotions et la présence de lunettes. Les détails de chaque visage sont affichés, notamment un identificateur de visage unique affecté à chaque visage. L'emplacement des visages est indiqué sur l’image à l’aide de rectangles englobants.
 5. Enregistrez vos modifications et revenez au terminal intégré pour le dossier **face-api** et entrez la commande suivante pour exécuter le programme :
 
     **C#**

@@ -36,7 +36,7 @@ La solution que vous allez créer pour Margie’s Travel nécessite les ressourc
 - Une ressource **Cognitive Services**, qui fournit les services d’IA pour les compétences que votre solution de recherche peut utiliser pour enrichir les données de la source de données avec des Insights générés par IA.
 - Un **compte de stockage** avec un conteneur blob dans lequel les documents à rechercher sont stockés.
 
-> **Important** : Vos ressources Recherche cognitive Azure et Cognitive Services doivent se trouver au même emplacement.
+> **Important** : Vos ressources Recherche cognitive Azure et Cognitive Services doivent se trouver au mêmeemplacement .
 
 ### <a name="create-an-azure-cognitive-search-resource"></a>Créer une ressource Recherche cognitive Azure
 
