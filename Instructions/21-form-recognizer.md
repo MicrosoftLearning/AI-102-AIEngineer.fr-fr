@@ -2,12 +2,12 @@
 lab:
   title: Extraire les données de formulaires
   module: Module 11 - Reading Text in Images and Documents
-ms.openlocfilehash: 540fdc49b9efcf335d43cdd7a6db405c255cd058
-ms.sourcegitcommit: de1f38bbe53ec209b42cd89516813773e2f3479b
+ms.openlocfilehash: 96d47db5b1db0b4d87b5c7acd267493487584c41
+ms.sourcegitcommit: 94c8705b76b644d0fb0cd6df1b78ff63d5869109
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/17/2022
-ms.locfileid: "145195549"
+ms.lasthandoff: 07/26/2022
+ms.locfileid: "147406484"
 ---
 # <a name="extract-data-from-forms"></a>Extraire les données de formulaires 
 
@@ -20,8 +20,8 @@ Supposons qu'une entreprise demande actuellement à ses employés d'acheter manu
 Si vous ne l’avez pas déjà fait, vous devez cloner le référentiel de code pour ce cours :
 
 1. Démarrez Visual Studio Code.
-2. Ouvrez la palette (Maj+CTRL+P) et exécutez une commande **Git : Cloner** pour cloner le référentiel `https://github.com/MicrosoftLearning/AI-102-AIEngineer` vers un dossier local (peu importe quel dossier).
-3. Lorsque le référentiel a été cloné, ouvrez le dossier dans Visual Studio Code.
+2. Ouvrez la palette (Maj+CTRL+P) et exécutez une commande **Git: Clone** pour cloner le référentiel `https://github.com/MicrosoftLearning/AI-102-AIEngineer` vers un dossier local (peu importe quel dossier).
+3. Une fois le référentiel cloné, ouvrez le dossier dans Visual Studio Code.
 4. Attendez que des fichiers supplémentaires soient installés pour prendre en charge les projets de code C# dans le référentiel.
 
     > **Remarque** : Si vous êtes invité à ajouter des ressources requises pour générer et déboguer, sélectionnez **Not Now** (Pas maintenant).
@@ -34,9 +34,9 @@ Pour utiliser le service Form Recognizer, vous devez créer une ressource Form R
 
 2. Sélectionnez le bouton **&#65291;Créer une ressource**, recherchez *Form Recognizer* et créez une ressource **Form Recognizer** avec les paramètres suivants :
     - **Abonnement** : *votre abonnement Azure*
-    - **Groupe de ressources** : *choisissez ou créez un groupe de ressources. (Si vous utilisez un abonnement restreint, vous n’avez peut-être pas l’autorisation de créer un groupe de ressources. Dans ce cas, utilisez le groupe fourni.)*
+    - **Groupe de ressources** : *Choisissez ou créez un groupe de ressources. (Si vous utilisez un abonnement restreint, vous n’avez peut-être pas l’autorisation de créer un groupe de ressources. Dans ce cas, utilisez le groupe fourni.)*
     - **Région** : *choisissez n’importe quelle région disponible*
-    - **Nom** : *entrez un nom unique.*
+    - **Nom** : *Entrez un nom unique.*
     - **Niveau tarifaire** : F0
 
     > **Remarque** : Si vous avez déjà un service de reconnaissance de formulaire F0 dans votre abonnement, sélectionnez **S0** pour celui-ci.
@@ -201,7 +201,7 @@ pip install azure-ai-formrecognizer==3.0.0
 **C#**
 
 ```
-Install-Package Tabulate.NET -Version 1.0.5
+dotnet add package Tabulate.NET --version 1.0.5
 ```
 
 **Python**
